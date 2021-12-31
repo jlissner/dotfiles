@@ -18,6 +18,9 @@ local use = require('packer').use
 require('packer').startup(function()
   use {'wbthomason/packer.nvim', opt = true}
 
+  -- start screen
+  use 'mhinz/vim-startify'
+
   -- utils
   use 'tpope/vim-surround' -- crud surrounds
   use 'tpope/vim-repeat' -- make repeat command work more predicably
@@ -27,6 +30,26 @@ require('packer').startup(function()
   } -- commenting and uncommenting stuff
   use 'karb94/neoscroll.nvim' -- smooth scrolling
   use 'ggandor/lightspeed.nvim' -- better motions
+  use { 
+    "nvim-neorg/neorg",
+    config = function()
+        require('neorg').setup {
+            -- Tell Neorg what modules to load
+            load = {
+                ["core.defaults"] = {}, -- Load all the default modules
+                ["core.norg.concealer"] = {}, -- Allows for use of icons
+                ["core.norg.dirman"] = { -- Manage your directories with Neorg
+                    config = {
+                        workspaces = {
+                            my_workspace = "~/neorg"
+                        }
+                    }
+                }
+            },
+        }
+    end,
+    requires = "nvim-lua/plenary.nvim"
+  }
 
   -- file finder
   use {
@@ -36,6 +59,10 @@ require('packer').startup(function()
 
   -- project navigation
     use 'tpope/vim-vinegar'
+    use {
+      'romgrk/barbar.nvim',
+      requires = {'kyazdani42/nvim-web-devicons'}
+    }
   --[[ use { -- need to fix config before can use
     'kyazdani42/nvim-tree.lua',
     requires = {
@@ -81,4 +108,5 @@ require("mappings")
 require("lsp")
 require("theme")
 require("treesitter")
+require("barbar")
 -- require("nvim-tree") -- has bugs, not sure whats up

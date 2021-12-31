@@ -57,3 +57,4 @@ vim.api.nvim_exec([[
     autocmd TextYankPost * silent! lua vim.highlight.on_yank()
   augroup end
 ]], false)
+

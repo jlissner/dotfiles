@@ -10,6 +10,7 @@ function inoremap(lhs, rhs, opts) mapKey("i", lhs, rhs, opts) end
 
 -- refresh settings
 mapKey("n", "<F5>", ":source ~/AppData/Local/nvim/init.lua<CR>",  { noremap = true })
+mapKey("n", "<S-F5>", ":e ~/AppData/Local/nvim<CR>",  { noremap = true })
 
 -- saves
 mapKey("n", "<C-s>", ":w <CR>",  { noremap = true })
@@ -27,14 +28,14 @@ mapKey("v", "<C-/>", "gbgv", { silent = true })
 mapKey("i", "<C-/>", "<ESC>mtgc`ta", { silent = true })
 
 -- window splitting
-mapKey("n", "<leader>v", "<C-w>v<C-w>l:Explore<CR>", opts)
-mapKey("n", "<leader>s", "<C-w>s<C-w>j:Explore<CR>", opts)
-mapKey("n", "<leader>q", ":bd<ESC>", opts)
-mapKey("n", "<leader><S-q>", ":bd!<ESC>", opts)
+mapKey("n", "<leader>v", "<C-w>v<C-w>l:Startify<CR>", opts)
+mapKey("n", "<leader>s", "<C-w>s<C-w>j:Startify<CR>", opts)
 mapKey("n", "<leader>l", "<C-w>l", opts)
 mapKey("n", "<leader>h", "<C-w>h", opts)
 mapKey("n", "<leader>j", "<C-w>j", opts)
 mapKey("n", "<leader>k", "<C-w>k", opts)
+mapKey("n", "<leader>,", "<C-w><", opts) -- make vertical pane bigger
+mapKey("n", "<leader>.", "<C-w>>", opts) -- make vertical pane smaller
 
 -- duplicate line
 mapKey("n", "<C-S-d>", "yyp", opts)
@@ -67,6 +68,9 @@ mapKey("n", "<C-v>", "\"*p", opts)
 mapKey("v", "<C-v>", "\"*p", opts)
 mapKey("i", "<C-v>", "<ESC>\"*pa", opts)
 
+-- go into visual block mode needed to be remapped
+mapKey("n", "<leader>x", "<C-v>", opts)
+
 -- undo/redo
 mapKey("n", "<C-z>", "u", opts)
 mapKey("n", "<C-S-z>", "<C-r>", opts)
@@ -91,3 +95,44 @@ mapKey("n", "<C-p>", "<cmd>Telescope find_files<cr>", opts)
 mapKey("n", "<C-S-f>", "<cmd>Telescope live_grep<cr>", opts)
 mapKey("n", "<C-S-b>", "<cmd>Telescope buffers<cr>", opts)
 mapKey("n", "<C-S-h>", "<cmd>Telescope help_tags<cr>", opts)
+
+-- folding
+mapKey("n", "zz", "za", opts);
+
+-- select all
+mapKey("n", "<C-a>", "ggVG", opts);
+mapKey("v", "<C-a>", "<ESC>ggVG", opts);
+mapKey("i", "<C-a>", "<ESC>ggVG", opts);
+
+-- barbar
+-- Move to previous/next
+mapKey("n", "<A-,>", ":BufferPrevious<CR>", opts);
+mapKey("n", "<A-.>", ":BufferNext<CR>", opts);
+-- Re-order to previous/next
+mapKey("n", "<A-<>", ":BufferMovePrevious<CR>", opts);
+mapKey("n", "<A->>", ":BufferMoveNext<CR>", opts);
+-- Goto buffer in position...
+mapKey("n", "<A-1>", ":BufferGoto 1<CR>", opts);
+mapKey("n", "<A-2>", ":BufferGoto 2<CR>", opts);
+mapKey("n", "<A-3>", ":BufferGoto 3<CR>", opts);
+mapKey("n", "<A-4>", ":BufferGoto 4<CR>", opts);
+mapKey("n", "<A-5>", ":BufferGoto 5<CR>", opts);
+mapKey("n", "<A-6>", ":BufferGoto 6<CR>", opts);
+mapKey("n", "<A-7>", ":BufferGoto 7<CR>", opts);
+mapKey("n", "<A-8>", ":BufferGoto 8<CR>", opts);
+mapKey("n", "<A-9>", ":BufferLast<CR>", opts);
+
+mapKey("n", "<leader>q", ":BufferClose<CR>", opts);
+mapKey("n", "<leader>Q", ":q<CR>", opts);
+--[[ " Close commands
+"                          :BufferCloseAllButCurrent<CR>
+"                          :BufferCloseAllButPinned<CR>
+"                          :BufferCloseBuffersLeft<CR>
+"                          :BufferCloseBuffersRight<CR>
+" Magic buffer-picking mode
+nnoremap <silent> <C-s>    :BufferPick<CR>
+" Sort automatically by...
+nnoremap <silent> <Space>bb :BufferOrderByBufferNumber<CR>
+nnoremap <silent> <Space>bd :BufferOrderByDirectory<CR>
+nnoremap <silent> <Space>bl :BufferOrderByLanguage<CR>
+nnoremap <silent> <Space>bw :BufferOrderByWindowNumber<CR> ]]
