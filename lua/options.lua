@@ -10,6 +10,10 @@ vim.o.sidescrolloff = 8
 vim.o.shell = "cmd"
 vim.o.termguicolors = true
 
+-- set ripgrep as grep engine
+vim.o.grepprg="rg --vimgrep --no-heading --smart-case"
+vim.o.grepformat="%f:%l:%c:%m"
+
 -- line numbers
 vim.wo.number = true
 vim.o.numberwidth = 4
