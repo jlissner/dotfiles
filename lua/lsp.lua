@@ -28,6 +28,7 @@ local cmp = require'cmp'
       ['<CR>'] = cmp.mapping.confirm({ select = true }),
     },
     sources = cmp.config.sources({
+      { name = 'neorg' },
       { name = 'nvim_lsp' },
       { name = 'vsnip' }, -- For vsnip users.
       -- { name = 'luasnip' }, -- For luasnip users.
@@ -107,7 +108,7 @@ lspconfig.tsserver.setup({
         local opts = { silent = true }
         setBufferKeymap('n', '<F12>', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
         setBufferKeymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
-        setBufferKeymap('n', 'gi', 'yiW/<C-r>"<CR>', opts)
+        setBufferKeymap('n', 'gi', 'yiw/<C-r>"<CR>', opts)
         setBufferKeymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
         setBufferKeymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
         setBufferKeymap('n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)

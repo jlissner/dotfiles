@@ -31,24 +31,34 @@ require('packer').startup(function()
   use 'karb94/neoscroll.nvim' -- smooth scrolling
   use 'ggandor/lightspeed.nvim' -- better motions
   use { 
-    "nvim-neorg/neorg",
+    'nvim-neorg/neorg',
     config = function()
         require('neorg').setup {
             -- Tell Neorg what modules to load
             load = {
-                ["core.defaults"] = {}, -- Load all the default modules
-                ["core.norg.concealer"] = {}, -- Allows for use of icons
-                ["core.norg.dirman"] = { -- Manage your directories with Neorg
+                ['core.defaults'] = {}, -- Load all the default modules
+                ['core.norg.concealer'] = {}, -- Allows for use of icons
+                ['core.norg.dirman'] = { -- Manage your directories with Neorg
                     config = {
                         workspaces = {
-                            my_workspace = "~/neorg"
+                            my_workspace = '~/neorg'
                         }
                     }
-                }
+                },
+                ['core.norg.completion'] = {
+                    config = {
+                        engine = 'nvim-cmp'
+                    }
+                },
+                ["core.keybinds"] = {
+                   config = {
+                     default_keybinds = true
+                   }
+                },
             },
         }
     end,
-    requires = "nvim-lua/plenary.nvim"
+    requires = 'nvim-lua/plenary.nvim'
   }
 
   -- file finder
@@ -58,11 +68,11 @@ require('packer').startup(function()
   }
 
   -- project navigation
-    use 'tpope/vim-vinegar'
     use {
       'romgrk/barbar.nvim',
       requires = {'kyazdani42/nvim-web-devicons'}
     }
+    use 'tpope/vim-vinegar'
   --[[ use { -- need to fix config before can use
     'kyazdani42/nvim-tree.lua',
     requires = {
@@ -96,6 +106,7 @@ require('packer').startup(function()
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate'
   }
+  use 'jose-elias-alvarez/null-ls.nvim'
 
   -- theme
   use 'jacoborus/tender.vim'
