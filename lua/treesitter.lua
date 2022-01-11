@@ -25,6 +25,7 @@ parser_configs.norg_table = {
 }
 
 require('nvim-treesitter.configs').setup {
+  ensure_installed = { "norg", "norg_meta", "norg_table", "haskell", "cpp", "c", "javascript", "markdown" },
   highlight = { enable = true },
   incremental_selection = {
     enable = true,

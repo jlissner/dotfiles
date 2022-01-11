@@ -33,7 +33,7 @@ vim.o.splitright = true
 vim.o.splitbelow = true
 
 -- fold level stuff
-vim.o.foldlevel = 8
+vim.o.foldlevel = 12
 vim.o.foldmethod = "indent"
 
 -- see whats happening while substituting

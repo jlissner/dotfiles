@@ -75,6 +75,11 @@ _G.packer_plugins = {
     path = "C:\\Users\\jliss\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\Comment.nvim",
     url = "https://github.com/numToStr/Comment.nvim"
   },
+  ["barbar.nvim"] = {
+    loaded = true,
+    path = "C:\\Users\\jliss\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\barbar.nvim",
+    url = "https://github.com/romgrk/barbar.nvim"
+  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "C:\\Users\\jliss\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\cmp-buffer",
@@ -106,6 +111,27 @@ _G.packer_plugins = {
     path = "C:\\Users\\jliss\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
   },
+  ["lightspeed.nvim"] = {
+    loaded = true,
+    path = "C:\\Users\\jliss\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\lightspeed.nvim",
+    url = "https://github.com/ggandor/lightspeed.nvim"
+  },
+  neorg = {
+    config = { "\27LJ\2\n∆\2\0\0\a\0\20\0\0276\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\18\0005\3\3\0004\4\0\0=\4\4\0034\4\0\0=\4\5\0035\4\t\0005\5\a\0005\6\6\0=\6\b\5=\5\n\4=\4\v\0035\4\r\0005\5\f\0=\5\n\4=\4\14\0035\4\16\0005\5\15\0=\5\n\4=\4\17\3=\3\19\2B\0\2\1K\0\1\0\tload\1\0\0\18core.keybinds\1\0\0\1\0\1\21default_keybinds\2\25core.norg.completion\1\0\0\1\0\1\vengine\rnvim-cmp\21core.norg.dirman\vconfig\1\0\0\15workspaces\1\0\0\1\0\1\17my_workspace\f~/neorg\24core.norg.concealer\18core.defaults\1\0\0\nsetup\nneorg\frequire\0" },
+    loaded = true,
+    path = "C:\\Users\\jliss\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\neorg",
+    url = "https://github.com/nvim-neorg/neorg"
+  },
+  ["neoscroll.nvim"] = {
+    loaded = true,
+    path = "C:\\Users\\jliss\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\neoscroll.nvim",
+    url = "https://github.com/karb94/neoscroll.nvim"
+  },
+  ["null-ls.nvim"] = {
+    loaded = true,
+    path = "C:\\Users\\jliss\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\null-ls.nvim",
+    url = "https://github.com/jose-elias-alvarez/null-ls.nvim"
+  },
   ["nvim-cmp"] = {
     loaded = true,
     path = "C:\\Users\\jliss\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-cmp",
@@ -131,6 +157,11 @@ _G.packer_plugins = {
     path = "C:\\Users\\jliss\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
+  ["nvim-web-devicons"] = {
+    loaded = true,
+    path = "C:\\Users\\jliss\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-web-devicons",
+    url = "https://github.com/kyazdani42/nvim-web-devicons"
+  },
   ["packer.nvim"] = {
     loaded = false,
     needs_bufread = false,
@@ -141,6 +172,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "C:\\Users\\jliss\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
+  },
+  ["telescope.nvim"] = {
+    loaded = true,
+    path = "C:\\Users\\jliss\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\telescope.nvim",
+    url = "https://github.com/nvim-telescope/telescope.nvim"
   },
   ["tender.vim"] = {
     loaded = true,
@@ -156,6 +192,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "C:\\Users\\jliss\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-repeat",
     url = "https://github.com/tpope/vim-repeat"
+  },
+  ["vim-startify"] = {
+    loaded = true,
+    path = "C:\\Users\\jliss\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-startify",
+    url = "https://github.com/mhinz/vim-startify"
   },
   ["vim-surround"] = {
     loaded = true,
@@ -175,14 +216,18 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: gitsigns.nvim
-time([[Config for gitsigns.nvim]], true)
-try_loadstring("\27LJ\2\n6\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\rgitsigns\frequire\0", "config", "gitsigns.nvim")
-time([[Config for gitsigns.nvim]], false)
 -- Config for: Comment.nvim
 time([[Config for Comment.nvim]], true)
 try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fComment\frequire\0", "config", "Comment.nvim")
 time([[Config for Comment.nvim]], false)
+-- Config for: neorg
+time([[Config for neorg]], true)
+try_loadstring("\27LJ\2\n∆\2\0\0\a\0\20\0\0276\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\18\0005\3\3\0004\4\0\0=\4\4\0034\4\0\0=\4\5\0035\4\t\0005\5\a\0005\6\6\0=\6\b\5=\5\n\4=\4\v\0035\4\r\0005\5\f\0=\5\n\4=\4\14\0035\4\16\0005\5\15\0=\5\n\4=\4\17\3=\3\19\2B\0\2\1K\0\1\0\tload\1\0\0\18core.keybinds\1\0\0\1\0\1\21default_keybinds\2\25core.norg.completion\1\0\0\1\0\1\vengine\rnvim-cmp\21core.norg.dirman\vconfig\1\0\0\15workspaces\1\0\0\1\0\1\17my_workspace\f~/neorg\24core.norg.concealer\18core.defaults\1\0\0\nsetup\nneorg\frequire\0", "config", "neorg")
+time([[Config for neorg]], false)
+-- Config for: gitsigns.nvim
+time([[Config for gitsigns.nvim]], true)
+try_loadstring("\27LJ\2\n6\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\rgitsigns\frequire\0", "config", "gitsigns.nvim")
+time([[Config for gitsigns.nvim]], false)
 if should_profile then save_profiles() end
 
 end)
