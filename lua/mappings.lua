@@ -91,13 +91,16 @@ mapKey("v", "<Tab>", ">gv", opts)
 mapKey("v", "<S-Tab>", "<gv", opts)
 
 -- Find files using Telescope command-line sugar.
-mapKey("n", "<C-p>", "<cmd>Telescope find_files<cr>", opts)
-mapKey("n", "<C-S-f>", "<cmd>Telescope live_grep<cr>", opts)
-mapKey("n", "<C-S-b>", "<cmd>Telescope buffers<cr>", opts)
-mapKey("n", "<C-S-h>", "<cmd>Telescope help_tags<cr>", opts)
+mapKey("n", "<C-p>", "<cmd>Telescope find_files<CR>", opts)
+mapKey("n", "<C-f>", "<cmd>Telescope current_buffer_fuzzy_find<CR>", opts)
+mapKey("n", "<C-S-f>", "<cmd>Telescope live_grep<CR>", opts)
+mapKey("n", "<C-S-b>", "<cmd>Telescope buffers<CR>", opts)
+mapKey("n", "<C-S-h>", "<cmd>Telescope help_tags<CR>", opts)
+mapKey("n", "gtm", "<cmd>Telescope marks<CR>", opts)
+mapKey("n", "gtb", "<cmd>Telescope buffers<CR>", opts)
 
 -- folding
-mapKey("n", "zz", "za", opts);
+mapKey("n", "zc", "v}kzf", opts);
 
 -- select all
 mapKey("n", "<C-a>", "ggVG", opts);
@@ -108,9 +111,6 @@ mapKey("i", "<C-a>", "<ESC>ggVG", opts);
 -- Move to previous/next
 mapKey("n", "<A-,>", ":BufferPrevious<CR>", opts);
 mapKey("n", "<A-.>", ":BufferNext<CR>", opts);
--- Re-order to previous/next
-mapKey("n", "<A-<>", ":BufferMovePrevious<CR>", opts);
-mapKey("n", "<A->>", ":BufferMoveNext<CR>", opts);
 -- Goto buffer in position...
 mapKey("n", "<A-1>", ":BufferGoto 1<CR>", opts);
 mapKey("n", "<A-2>", ":BufferGoto 2<CR>", opts);

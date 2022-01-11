@@ -38,7 +38,7 @@ vim.o.splitbelow = true
 
 -- fold level stuff
 vim.o.foldlevel = 12
-vim.o.foldmethod = "indent"
+vim.o.foldmethod = "manual"
 
 -- see whats happening while substituting
 vim.o.inccommand = "nosplit"

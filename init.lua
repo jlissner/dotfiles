@@ -24,12 +24,28 @@ require('packer').startup(function()
   -- utils
   use 'tpope/vim-surround' -- crud surrounds
   use 'tpope/vim-repeat' -- make repeat command work more predicably
-  use {
+  use { -- commenting and uncommenting stuff
     'numToStr/Comment.nvim',
     config = function() require('Comment').setup() end
-  } -- commenting and uncommenting stuff
+  }
   use 'karb94/neoscroll.nvim' -- smooth scrolling
   use 'ggandor/lightspeed.nvim' -- better motions
+  use{ 'anuvyklack/pretty-fold.nvim', -- pretty folds
+     config = function()
+        require('pretty-fold').setup{
+          fill_char = '━',
+            sections = {
+              left = {
+                 '━━┫ ', 'content', '┣'
+              },
+              right = {
+                 '┫ ', 'number_of_folded_lines', ': ', 'percentage', ' ┣━━',
+              }
+           }
+        }
+        require('pretty-fold.preview').setup_keybinding('h')
+     end
+  }
   use { 
     'nvim-neorg/neorg',
     config = function()
