@@ -17,10 +17,8 @@ mapKey("n", "<C-s>", ":w <CR>",  { noremap = true })
 mapKey("v", "<C-s>", "<ESC>:w <CR>",  { noremap = true })
 mapKey("i", "<C-s>", "<ESC>:w <CR>li",  { noremap = true })
 
--- clear highlight on esc
-mapKey("n", "<ESC>", "<ESC>:noh<CR>", opts)
-mapKey("v", "<ESC>", "<ESC>:noh<CR>", opts)
-mapKey("i", "<ESC>", "<ESC>:noh<CR>", opts)
+-- clear highlight on escape
+mapKey("n", "<ESC>", ":noh <CR>", opts)
 
 -- commenting and uncommenting stuff
 mapKey("n", "<C-/>", "mtgcc`t", { silent = true })
@@ -59,9 +57,14 @@ mapKey("i", "<C-S-Down>", "<ESC>:m +1<CR>a", opts)
 mapKey("i", "<C-S-j>", "<ESC>:m +1<CR>a", opts)
 
 -- go to normal mode with jj
-mapKey("i", "jj", "<ESC>", opts)
+mapKey("i", "jj", "<ESC>l", opts)
+mapKey("i", "jk", "<ESC>l", opts)
 
 -- copy/paste
+mapKey("n", "Y", "yg$", opts) -- yank from cursor to end of line
+mapKey("v", "p", '"_dP', opts) -- dont yant text after pasting in visual mode
+mapKey("n", "d", '"_d', opts) -- dont yank deleted text
+mapKey("v", "d", '"_d', opts) -- dont yank deleted text
 mapKey("n", "<C-c>", "yy", opts)
 mapKey("v", "<C-c>", "y", opts)
 mapKey("n", "<C-v>", "\"*p", opts)
@@ -69,7 +72,7 @@ mapKey("v", "<C-v>", "\"*p", opts)
 mapKey("i", "<C-v>", "<ESC>\"*pa", opts)
 
 -- go into visual block mode needed to be remapped
-mapKey("n", "<leader>x", "<C-v>", opts)
+mapKey("n", "<opts>x", "<C-v>", opts)
 
 -- undo/redo
 mapKey("n", "<C-z>", "u", opts)
@@ -80,18 +83,15 @@ mapKey("i", "<C-z>", "<ESC>ua", opts)
 mapKey("i", "<C-S-z>", "<ESC><C-r>a", opts)
 
 -- substitute shorthand
-mapKey("n", "<A-d>", "yiw:%s/<C-r>\"/", { noremap = true }) 
-mapKey("v", "<C-d>", "y:%s/<C-r>\"/", { noremap = true })
-mapKey("i", "<C-d>", "<ESC>yiw:%s/<C-r>\"/", { noremap = true })
+mapKey("n", "<A-d>", "<plug>(SubversiveSubstituteWordRange)", {});
+mapKey("v", "<A-d>", "<plug>(SubversiveSubstituteRange)", {});
 
 -- indenting
-mapKey("n", "<Tab>", ">>", opts)
-mapKey("n", "<S-Tab>", "<<", opts)
 mapKey("v", "<Tab>", ">gv", opts)
 mapKey("v", "<S-Tab>", "<gv", opts)
 
 -- Find files using Telescope command-line sugar.
-mapKey("n", "<C-p>", "<cmd>Telescope find_files<CR>", opts)
+mapKey("n", "<C-p>", "<cmd>Telescope git_files<CR>", opts)
 mapKey("n", "<C-f>", "<cmd>Telescope current_buffer_fuzzy_find<CR>", opts)
 mapKey("n", "<C-S-f>", "<cmd>Telescope live_grep<CR>", opts)
 mapKey("n", "<C-S-b>", "<cmd>Telescope buffers<CR>", opts)
@@ -100,17 +100,16 @@ mapKey("n", "gtm", "<cmd>Telescope marks<CR>", opts)
 mapKey("n", "gtb", "<cmd>Telescope buffers<CR>", opts)
 
 -- folding
-mapKey("n", "zc", "v}kzf", opts);
-
--- select all
-mapKey("n", "<C-a>", "ggVG", opts);
-mapKey("v", "<C-a>", "<ESC>ggVG", opts);
-mapKey("i", "<C-a>", "<ESC>ggVG", opts);
+mapKey("n", "zc", "gtizf", { silent = true });
 
 -- barbar
+-- pick buffer
+mapKey("n", "<leader>b", ":BufferPick<CR>", opts);
+
 -- Move to previous/next
-mapKey("n", "<A-,>", ":BufferPrevious<CR>", opts);
-mapKey("n", "<A-.>", ":BufferNext<CR>", opts);
+mapKey("n", "<S-Tab>", ":BufferPrevious<CR>", opts);
+mapKey("n", "<Tab>", ":BufferNext<CR>", opts);
+
 -- Goto buffer in position...
 mapKey("n", "<A-1>", ":BufferGoto 1<CR>", opts);
 mapKey("n", "<A-2>", ":BufferGoto 2<CR>", opts);
@@ -122,17 +121,17 @@ mapKey("n", "<A-7>", ":BufferGoto 7<CR>", opts);
 mapKey("n", "<A-8>", ":BufferGoto 8<CR>", opts);
 mapKey("n", "<A-9>", ":BufferLast<CR>", opts);
 
-mapKey("n", "<leader>q", ":BufferClose<CR>", opts);
-mapKey("n", "<leader>Q", ":q<CR>", opts);
---[[ " Close commands
-"                          :BufferCloseAllButCurrent<CR>
-"                          :BufferCloseAllButPinned<CR>
-"                          :BufferCloseBuffersLeft<CR>
-"                          :BufferCloseBuffersRight<CR>
-" Magic buffer-picking mode
-nnoremap <silent> <C-s>    :BufferPick<CR>
-" Sort automatically by...
-nnoremap <silent> <Space>bb :BufferOrderByBufferNumber<CR>
-nnoremap <silent> <Space>bd :BufferOrderByDirectory<CR>
-nnoremap <silent> <Space>bl :BufferOrderByLanguage<CR>
-nnoremap <silent> <Space>bw :BufferOrderByWindowNumber<CR> ]]
+mapKey("n", "<leader>x", ":BufferDelete<CR>", opts);
+mapKey("n", "<leader>q", ":q<CR>", opts);
+
+-- terminal commands
+mapKey("n", "<leader>t", "<cmd>FloatermToggle<CR>", opts);
+mapKey("t", "<ESC>", "<cmd>FloatermToggle<CR>", opts);
+mapKey("t", "<C-w>", "<cmd>FloatermKill<CR>", opts);
+mapKey("t", "<C-T>", "<cmd>FloatermNew<CR>", opts);
+mapKey("t", "<Tab>", "<cmd>FloatermNext<CR>", opts);
+mapKey("t", "<S-Tab>", "<cmd>FloatermPrev<CR>", opts);
+
+-- custom motions
+mapKey("o", "ie", "<cmd>exec \"normal! ggVG\"<CR>", opts);
+mapKey("o", "iv", "<cmd>exec \"normal! HVL\"<CR>", opts);

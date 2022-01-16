@@ -1,7 +1,6 @@
 local lspconfig = require("lspconfig")
 
 local cmp = require'cmp'
-
   cmp.setup({
     snippet = {
       -- REQUIRED - you must specify a snippet engine
@@ -56,7 +55,7 @@ local cmp = require'cmp'
   })
 
   -- Setup lspconfig.
-  local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 lspconfig.tsserver.setup({
     -- Needed for inlayHints. Merge this table with your settings or copy
@@ -68,6 +67,10 @@ lspconfig.tsserver.setup({
     on_attach = function(client, bufnr)
         local ts_utils = require("nvim-lsp-ts-utils")
         local setBufferKeymap = function(mode, lhs, rhs, opts) vim.api.nvim_buf_set_keymap(bufnr, mode, lhs, rhs, opts) end
+
+        -- let null-ls take care of formatting 
+        client.resolved_capabilities.document_formatting = false;
+        client.resolved_capabilities.document_range_formatting = false;
 
         -- defaults
         ts_utils.setup({
@@ -108,7 +111,7 @@ lspconfig.tsserver.setup({
         local opts = { silent = true }
         setBufferKeymap('n', '<F12>', '<cmd>Telescope lsp_definitions<CR>', opts)
         setBufferKeymap('n', 'gr', '<cmd>Telescope lsp_references<CR>', opts)
-        setBufferKeymap('n', 'gs', '<cmd>Telescope lsp_document_symbols<CR>', opts)
+        setBufferKeymap('n', 'gts', '<cmd>Telescope lsp_document_symbols<CR>', opts)
         setBufferKeymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
         setBufferKeymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
         setBufferKeymap('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
@@ -117,6 +120,7 @@ lspconfig.tsserver.setup({
         setBufferKeymap('n', 'gtne', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
         setBufferKeymap('n', 'gtnE', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
         setBufferKeymap('n', '<leader>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
+        setBufferKeymap('n', '<leader>e', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
 
         -- available from nvim-lsp-ts-utils
         setBufferKeymap("n", "gs", ":TSLspOrganize<CR>", opts)

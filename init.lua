@@ -30,6 +30,34 @@ require('packer').startup(function()
   }
   use 'karb94/neoscroll.nvim' -- smooth scrolling
   use 'ggandor/lightspeed.nvim' -- better motions
+  use 'svermeulen/vim-subversive' -- better substitutes
+  use 'voldikss/vim-floaterm' -- have floating terminal
+  use {
+    'abecodes/tabout.nvim', -- make <tab> more useful in insert mode
+    config = function()
+      require('tabout').setup {
+          tabkey = '<Tab>', -- key to trigger tabout, set to an empty string to disable
+          backwards_tabkey = '<S-Tab>', -- key to trigger backwards tabout, set to an empty string to disable
+          act_as_tab = true, -- shift content if tab out is not possible
+          act_as_shift_tab = false, -- reverse shift content if tab out is not possible (if your keyboard/terminal supports <S-Tab>)
+          enable_backwards = true, -- well ...
+          completion = true, -- if the tabkey is used in a completion pum
+          tabouts = {
+            {open = "'", close = "'"},
+            {open = '"', close = '"'},
+            {open = '`', close = '`'},
+            {open = '(', close = ')'},
+            {open = '[', close = ']'},
+            {open = '{', close = '}'}
+          },
+          ignore_beginning = true, --[[ if the cursor is at the beginning of a filled element it will rather tab out than shift the content ]]
+          exclude = {} -- tabout will ignore these filetypes
+      }
+    end,
+    wants = {'nvim-treesitter'}, -- or require if not used so far
+    after = {'nvim-cmp'} -- if a completion plugin is using tabs load it before
+  }
+
   use{ 'anuvyklack/pretty-fold.nvim', -- pretty folds
      config = function()
         require('pretty-fold').setup{
@@ -77,6 +105,13 @@ require('packer').startup(function()
     requires = 'nvim-lua/plenary.nvim'
   }
 
+  -- status line
+  use {
+    'nvim-lualine/lualine.nvim',
+    config = function() require('lualine').setup() end,
+    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+  }
+
   -- file finder
   use {
     'nvim-telescope/telescope.nvim',
@@ -103,6 +138,9 @@ require('packer').startup(function()
     config = function() require('gitsigns').setup() end
   }
 
+  -- testing utils
+  use 'David-Kunz/jester'
+
   -- language stuff
   use 'sheerun/vim-polyglot'
   use 'neovim/nvim-lspconfig'
@@ -124,8 +162,9 @@ require('packer').startup(function()
   }
   use 'jose-elias-alvarez/null-ls.nvim'
 
-  -- theme
+  -- themes
   use 'jacoborus/tender.vim'
+  use 'rebelot/kanagawa.nvim'
 end)
 
 require('neoscroll').setup()
@@ -136,4 +175,6 @@ require("lsp")
 require("theme")
 require("treesitter")
 require("barbar")
+require("null_ls")
+require("floaterm")
 -- require("nvim-tree") -- has bugs, not sure whats up

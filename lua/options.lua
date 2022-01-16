@@ -1,12 +1,14 @@
 vim.o.compatible = false
 vim.o.encoding = "utf-8"
+vim.o.fileformat = "unix"
+vim.o.fileformats = "unix"
 vim.o.backspace = "indent,eol,start" -- backspace works on every char in insert mode
 vim.o.hidden = true
 vim.o.clipboard = 'unnamedplus' -- use system clipboard by default
 vim.o.mouse = 'a'
 vim.o.completeopt = 'menu,menuone,noselect'
-vim.o.scrolloff = 8
-vim.o.sidescrolloff = 8
+vim.o.scrolloff = 0
+vim.o.sidescrolloff = 0
 vim.o.shell = "cmd"
 vim.o.termguicolors = true
 
@@ -16,8 +18,8 @@ vim.o.grepformat="%f:%l:%c:%m"
 
 -- line numbers
 vim.wo.number = true
-vim.o.numberwidth = 4
-vim.wo.signcolumn = 'number' -- Display signs in the number column
+vim.o.numberwidth = 3
+vim.wo.signcolumn = 'yes:1' -- always have 1 line available for signs
 
 -- white characters
 vim.o.autoindent = true

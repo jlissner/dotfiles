@@ -25,15 +25,15 @@ parser_configs.norg_table = {
 }
 
 require('nvim-treesitter.configs').setup {
-  ensure_installed = { "norg", "norg_meta", "norg_table", "haskell", "cpp", "c", "javascript", "markdown" },
+  ensure_installed = { "norg", "norg_meta", "norg_table", "javascript", "markdown", "tsx", "scss" },
   highlight = { enable = true },
   incremental_selection = {
     enable = true,
     keymaps = {
-      init_selection = "gnn",
-      node_incremental = "grn",
-      scope_incremental = "grc",
-      node_decremental = "grm",
+      init_selection = "gti",
+      node_incremental = "gti",
+      -- scope_incremental = "grc",
+      node_decremental = "gtI",
     }
   }
 }
