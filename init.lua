@@ -21,6 +21,13 @@ require('packer').startup(function()
   -- start screen
   use 'mhinz/vim-startify'
 
+  -- sidebar
+  use {'sidebar-nvim/sidebar.nvim',
+    config = function()
+      require('sidebar-nvim').setup({ open = true })
+    end
+  }
+
   -- utils
   use 'tpope/vim-surround' -- crud surrounds
   use 'tpope/vim-repeat' -- make repeat command work more predicably
