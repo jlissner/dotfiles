@@ -9,7 +9,7 @@ function vnoremap(lhs, rhs, opts) mapKey("v", lhs, rhs, opts) end
 function inoremap(lhs, rhs, opts) mapKey("i", lhs, rhs, opts) end
 
 -- refresh settings
-mapKey("n", "<F5>", ":source ~/AppData/Local/nvim/init.lua<CR>",  { noremap = true })
+mapKey("n", "<F5>", ":source<CR>",  { noremap = true })
 mapKey("n", "<S-F5>", ":e ~/AppData/Local/nvim<CR>",  { noremap = true })
 
 -- saves
@@ -59,12 +59,11 @@ mapKey("i", "<C-S-j>", "<ESC>:m +1<CR>a", opts)
 -- go to normal mode with jj
 mapKey("i", "jj", "<ESC>l", opts)
 mapKey("i", "jk", "<ESC>l", opts)
+mapKey("i", "kj", "<ESC>l", opts)
 
 -- copy/paste
 mapKey("n", "Y", "yg$", opts) -- yank from cursor to end of line
 mapKey("v", "p", '"_dP', opts) -- dont yant text after pasting in visual mode
-mapKey("n", "d", '"_d', opts) -- dont yank deleted text
-mapKey("v", "d", '"_d', opts) -- dont yank deleted text
 mapKey("n", "<C-c>", "yy", opts)
 mapKey("v", "<C-c>", "y", opts)
 mapKey("n", "<C-v>", "\"*p", opts)
@@ -100,7 +99,7 @@ mapKey("n", "gtm", "<cmd>Telescope marks<CR>", opts)
 mapKey("n", "gtb", "<cmd>Telescope buffers<CR>", opts)
 
 -- folding
-mapKey("n", "zc", "gtizf", { silent = true });
+mapKey("n", "zc", "vibzf", { silent = true });
 
 -- barbar
 -- pick buffer

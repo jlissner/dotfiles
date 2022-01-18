@@ -18,13 +18,35 @@ local use = require('packer').use
 require('packer').startup(function()
   use {'wbthomason/packer.nvim', opt = true}
 
-  -- start screen
-  use 'mhinz/vim-startify'
-
-  -- sidebar
+  -- project navigation
+  use 'mhinz/vim-startify' -- start screen
+  use { -- file finder
+    'nvim-telescope/telescope.nvim',
+    requires = { {'nvim-lua/plenary.nvim'} }
+  }
+  use { -- buffer tabs
+    'romgrk/barbar.nvim',
+    requires = {'kyazdani42/nvim-web-devicons'}
+  }
+  use 'tpope/vim-vinegar' -- better netrw
   use {'sidebar-nvim/sidebar.nvim',
     config = function()
-      require('sidebar-nvim').setup({ open = true })
+      require('sidebar-nvim').setup({
+        open = true,
+        sections = {
+          "datetime",
+          "files",
+          "git",
+          "symbols",
+          "diagnostics",
+          "todos",
+        },
+        section_separator = "",
+        files = {
+          icon = "",
+          icon_open = "",
+        },
+      })
     end
   }
 
@@ -119,24 +141,6 @@ require('packer').startup(function()
     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   }
 
-  -- file finder
-  use {
-    'nvim-telescope/telescope.nvim',
-    requires = { {'nvim-lua/plenary.nvim'} }
-  }
-
-  -- project navigation
-    use {
-      'romgrk/barbar.nvim',
-      requires = {'kyazdani42/nvim-web-devicons'}
-    }
-    use 'tpope/vim-vinegar'
-  --[[ use { -- need to fix config before can use
-    'kyazdani42/nvim-tree.lua',
-    requires = {
-      'kyazdani42/nvim-web-devicons', -- optional, for file icon
-    },
-  } ]]
 
   -- git stuff
   use {
@@ -144,9 +148,7 @@ require('packer').startup(function()
     requires = { 'nvim-lua/plenary.nvim' },
     config = function() require('gitsigns').setup() end
   }
-
-  -- testing utils
-  use 'David-Kunz/jester'
+  use {'APZelos/blamer.nvim', config = function() vim.g.blamer_enabled = 1 end}
 
   -- language stuff
   use 'sheerun/vim-polyglot'
@@ -184,4 +186,3 @@ require("treesitter")
 require("barbar")
 require("null_ls")
 require("floaterm")
--- require("nvim-tree") -- has bugs, not sure whats up
