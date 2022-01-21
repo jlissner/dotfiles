@@ -19,10 +19,15 @@ require('packer').startup(function()
   use {'wbthomason/packer.nvim', opt = true}
 
   -- project navigation
-  use 'mhinz/vim-startify' -- start screen
+  use { -- start screen
+    'mhinz/vim-startify',
+    config = function()
+      vim.g.startify_session_persistence = 1
+    end
+  }
   use { -- file finder
     'nvim-telescope/telescope.nvim',
-    requires = { {'nvim-lua/plenary.nvim'} }
+    requires = { 'nvim-lua/plenary.nvim' }
   }
   use { -- buffer tabs
     'romgrk/barbar.nvim',
@@ -32,14 +37,14 @@ require('packer').startup(function()
   use {'sidebar-nvim/sidebar.nvim',
     config = function()
       require('sidebar-nvim').setup({
-        open = true,
+        open = false,
         sections = {
           "datetime",
           "files",
-          "git",
           "symbols",
           "diagnostics",
           "todos",
+          "git",
         },
         section_separator = "",
         files = {
@@ -125,8 +130,8 @@ require('packer').startup(function()
                 },
                 ["core.keybinds"] = {
                    config = {
-                     default_keybinds = true
-                   }
+                     default_keybinds = true,
+                   },
                 },
             },
         }
@@ -137,7 +142,6 @@ require('packer').startup(function()
   -- status line
   use {
     'nvim-lualine/lualine.nvim',
-    config = function() require('lualine').setup() end,
     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   }
 
@@ -148,7 +152,14 @@ require('packer').startup(function()
     requires = { 'nvim-lua/plenary.nvim' },
     config = function() require('gitsigns').setup() end
   }
-  use {'APZelos/blamer.nvim', config = function() vim.g.blamer_enabled = 1 end}
+  use {
+    'APZelos/blamer.nvim',
+    config = function()
+      vim.g.blamer_enabled = 1
+      vim.g.blamer_show_in_visual_modes = 0
+      vim.g.blamer_prefix = ' Blame: '
+    end
+  }
 
   -- language stuff
   use 'sheerun/vim-polyglot'
@@ -186,3 +197,5 @@ require("treesitter")
 require("barbar")
 require("null_ls")
 require("floaterm")
+require("lua_line")
+require("flest")

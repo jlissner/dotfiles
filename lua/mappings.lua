@@ -13,9 +13,9 @@ mapKey("n", "<F5>", ":source<CR>",  { noremap = true })
 mapKey("n", "<S-F5>", ":e ~/AppData/Local/nvim<CR>",  { noremap = true })
 
 -- saves
-mapKey("n", "<C-s>", ":w <CR>",  { noremap = true })
-mapKey("v", "<C-s>", "<ESC>:w <CR>",  { noremap = true })
-mapKey("i", "<C-s>", "<ESC>:w <CR>li",  { noremap = true })
+mapKey("n", "<C-s>", ":w<CR>",  { noremap = true })
+mapKey("v", "<C-s>", "<ESC>:w<CR>",  { noremap = true })
+mapKey("i", "<C-s>", "<ESC>:w<CR>l",  { noremap = true })
 
 -- clear highlight on escape
 mapKey("n", "<ESC>", ":noh <CR>", opts)
@@ -25,15 +25,19 @@ mapKey("n", "<C-/>", "mtgcc`t", { silent = true })
 mapKey("v", "<C-/>", "gbgv", { silent = true })
 mapKey("i", "<C-/>", "<ESC>mtgc`ta", { silent = true })
 
--- window splitting
+-- window helpers
 mapKey("n", "<leader>v", "<C-w>v<C-w>l:Startify<CR>", opts)
 mapKey("n", "<leader>s", "<C-w>s<C-w>j:Startify<CR>", opts)
-mapKey("n", "<leader>l", "<C-w>l", opts)
-mapKey("n", "<leader>h", "<C-w>h", opts)
-mapKey("n", "<leader>j", "<C-w>j", opts)
-mapKey("n", "<leader>k", "<C-w>k", opts)
-mapKey("n", "<leader>,", "<C-w><", opts) -- make vertical pane bigger
-mapKey("n", "<leader>.", "<C-w>>", opts) -- make vertical pane smaller
+mapKey("n", "<leader>1", "1<C-w><C-w>", opts) -- go to window 1-10
+mapKey("n", "<leader>2", "2<C-w><C-w>", opts)
+mapKey("n", "<leader>3", "3<C-w><C-w>", opts)
+mapKey("n", "<leader>4", "4<C-w><C-w>", opts)
+mapKey("n", "<leader>5", "5<C-w><C-w>", opts)
+mapKey("n", "<leader>6", "6<C-w><C-w>", opts)
+mapKey("n", "<leader>7", "7<C-w><C-w>", opts)
+mapKey("n", "<leader>8", "8<C-w><C-w>", opts)
+mapKey("n", "<leader>9", "9<C-w><C-w>", opts)
+mapKey("n", "<leader>0", "10<C-w><C-w>", opts)
 
 -- duplicate line
 mapKey("n", "<C-S-d>", "yyp", opts)
@@ -56,7 +60,7 @@ mapKey("i", "<C-S-Up>", "<ESC>:m -2<CR>a", opts)
 mapKey("i", "<C-S-Down>", "<ESC>:m +1<CR>a", opts)
 mapKey("i", "<C-S-j>", "<ESC>:m +1<CR>a", opts)
 
--- go to normal mode with jj
+-- go to normal mode with jj, jk, kj
 mapKey("i", "jj", "<ESC>l", opts)
 mapKey("i", "jk", "<ESC>l", opts)
 mapKey("i", "kj", "<ESC>l", opts)
@@ -71,7 +75,7 @@ mapKey("v", "<C-v>", "\"*p", opts)
 mapKey("i", "<C-v>", "<ESC>\"*pa", opts)
 
 -- go into visual block mode needed to be remapped
-mapKey("n", "<opts>x", "<C-v>", opts)
+mapKey("n", "<C-x>", "<C-v>", opts)
 
 -- undo/redo
 mapKey("n", "<C-z>", "u", opts)
@@ -80,6 +84,10 @@ mapKey("v", "<C-z>", "<ESC>u", opts)
 mapKey("v", "<C-S-z>", "<ESC><C-r>", opts)
 mapKey("i", "<C-z>", "<ESC>ua", opts)
 mapKey("i", "<C-S-z>", "<ESC><C-r>a", opts)
+
+-- sidebar mappings
+mapKey("n", "<leader>n", "<cmd>SidebarNvimToggle<CR>", opts);
+mapKey("n", "<leader>e", "<cmd>SidebarNvimFocus<CR>", opts);
 
 -- substitute shorthand
 mapKey("n", "<A-d>", "<plug>(SubversiveSubstituteWordRange)", {});
@@ -110,15 +118,15 @@ mapKey("n", "<S-Tab>", ":BufferPrevious<CR>", opts);
 mapKey("n", "<Tab>", ":BufferNext<CR>", opts);
 
 -- Goto buffer in position...
-mapKey("n", "<A-1>", ":BufferGoto 1<CR>", opts);
-mapKey("n", "<A-2>", ":BufferGoto 2<CR>", opts);
-mapKey("n", "<A-3>", ":BufferGoto 3<CR>", opts);
-mapKey("n", "<A-4>", ":BufferGoto 4<CR>", opts);
-mapKey("n", "<A-5>", ":BufferGoto 5<CR>", opts);
-mapKey("n", "<A-6>", ":BufferGoto 6<CR>", opts);
-mapKey("n", "<A-7>", ":BufferGoto 7<CR>", opts);
-mapKey("n", "<A-8>", ":BufferGoto 8<CR>", opts);
-mapKey("n", "<A-9>", ":BufferLast<CR>", opts);
+mapKey("n", "<C-1>", ":BufferGoto 1<CR>", opts);
+mapKey("n", "<C-2>", ":BufferGoto 2<CR>", opts);
+mapKey("n", "<C-3>", ":BufferGoto 3<CR>", opts);
+mapKey("n", "<C-4>", ":BufferGoto 4<CR>", opts);
+mapKey("n", "<C-5>", ":BufferGoto 5<CR>", opts);
+mapKey("n", "<C-6>", ":BufferGoto 6<CR>", opts);
+mapKey("n", "<C-7>", ":BufferGoto 7<CR>", opts);
+mapKey("n", "<C-8>", ":BufferGoto 8<CR>", opts);
+mapKey("n", "<C-9>", ":BufferLast<CR>", opts);
 
 mapKey("n", "<leader>x", ":BufferDelete<CR>", opts);
 mapKey("n", "<leader>q", ":q<CR>", opts);

@@ -81,7 +81,7 @@ _G.packer_plugins = {
     url = "https://github.com/romgrk/barbar.nvim"
   },
   ["blamer.nvim"] = {
-    config = { "\27LJ\2\n0\0\0\2\0\3\0\0056\0\0\0009\0\1\0)\1\1\0=\1\2\0K\0\1\0\19blamer_enabled\6g\bvim\0" },
+    config = { "\27LJ\2\n�\1\0\0\2\0\6\0\r6\0\0\0009\0\1\0)\1\1\0=\1\2\0006\0\0\0009\0\1\0)\1\0\0=\1\3\0006\0\0\0009\0\1\0'\1\5\0=\1\4\0K\0\1\0\r Blame: \18blamer_prefix blamer_show_in_visual_modes\19blamer_enabled\6g\bvim\0" },
     loaded = true,
     path = "C:\\Users\\joe.lissner\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\blamer.nvim",
     url = "https://github.com/APZelos/blamer.nvim"
@@ -128,7 +128,6 @@ _G.packer_plugins = {
     url = "https://github.com/ggandor/lightspeed.nvim"
   },
   ["lualine.nvim"] = {
-    config = { "\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\flualine\frequire\0" },
     loaded = true,
     path = "C:\\Users\\joe.lissner\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
@@ -197,7 +196,7 @@ _G.packer_plugins = {
     url = "https://github.com/anuvyklack/pretty-fold.nvim"
   },
   ["sidebar.nvim"] = {
-    config = { "\27LJ\2\n�\1\0\0\4\0\b\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0=\3\5\0025\3\6\0=\3\a\2B\0\2\1K\0\1\0\nfiles\1\0\2\14icon_open\b\ticon\b\rsections\1\a\0\0\rdatetime\nfiles\bgit\fsymbols\16diagnostics\ntodos\1\0\2\topen\2\22section_separator\5\nsetup\17sidebar-nvim\frequire\0" },
+    config = { "\27LJ\2\n�\1\0\0\4\0\b\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0=\3\5\0025\3\6\0=\3\a\2B\0\2\1K\0\1\0\nfiles\1\0\2\14icon_open\b\ticon\b\rsections\1\a\0\0\rdatetime\nfiles\fsymbols\16diagnostics\ntodos\bgit\1\0\2\22section_separator\5\topen\1\nsetup\17sidebar-nvim\frequire\0" },
     loaded = true,
     path = "C:\\Users\\joe.lissner\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\sidebar.nvim",
     url = "https://github.com/sidebar-nvim/sidebar.nvim"
@@ -237,6 +236,7 @@ _G.packer_plugins = {
     url = "https://github.com/tpope/vim-repeat"
   },
   ["vim-startify"] = {
+    config = { "\27LJ\2\n>\0\0\2\0\3\0\0056\0\0\0009\0\1\0)\1\1\0=\1\2\0K\0\1\0!startify_session_persistence\6g\bvim\0" },
     loaded = true,
     path = "C:\\Users\\joe.lissner\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-startify",
     url = "https://github.com/mhinz/vim-startify"
@@ -268,26 +268,26 @@ time([[Defining packer_plugins]], false)
 time([[Config for gitsigns.nvim]], true)
 try_loadstring("\27LJ\2\n6\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\rgitsigns\frequire\0", "config", "gitsigns.nvim")
 time([[Config for gitsigns.nvim]], false)
--- Config for: pretty-fold.nvim
-time([[Config for pretty-fold.nvim]], true)
-try_loadstring("\27LJ\2\n�\2\0\0\5\0\r\0\0196\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\5\0005\4\4\0=\4\6\0035\4\a\0=\4\b\3=\3\t\2B\0\2\0016\0\0\0'\2\n\0B\0\2\0029\0\v\0'\2\f\0B\0\2\1K\0\1\0\6h\21setup_keybinding\24pretty-fold.preview\rsections\nright\1\6\0\0\t┫ \27number_of_folded_lines\a: \15percentage\15 ┣━━\tleft\1\0\0\1\4\0\0\15━━┫ \fcontent\b┣\1\0\1\14fill_char\b━\nsetup\16pretty-fold\frequire\0", "config", "pretty-fold.nvim")
-time([[Config for pretty-fold.nvim]], false)
--- Config for: lualine.nvim
-time([[Config for lualine.nvim]], true)
-try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\flualine\frequire\0", "config", "lualine.nvim")
-time([[Config for lualine.nvim]], false)
+-- Config for: sidebar.nvim
+time([[Config for sidebar.nvim]], true)
+try_loadstring("\27LJ\2\n�\1\0\0\4\0\b\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0=\3\5\0025\3\6\0=\3\a\2B\0\2\1K\0\1\0\nfiles\1\0\2\14icon_open\b\ticon\b\rsections\1\a\0\0\rdatetime\nfiles\fsymbols\16diagnostics\ntodos\bgit\1\0\2\22section_separator\5\topen\1\nsetup\17sidebar-nvim\frequire\0", "config", "sidebar.nvim")
+time([[Config for sidebar.nvim]], false)
 -- Config for: neorg
 time([[Config for neorg]], true)
 try_loadstring("\27LJ\2\n�\2\0\0\a\0\20\0\0276\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\18\0005\3\3\0004\4\0\0=\4\4\0034\4\0\0=\4\5\0035\4\t\0005\5\a\0005\6\6\0=\6\b\5=\5\n\4=\4\v\0035\4\r\0005\5\f\0=\5\n\4=\4\14\0035\4\16\0005\5\15\0=\5\n\4=\4\17\3=\3\19\2B\0\2\1K\0\1\0\tload\1\0\0\18core.keybinds\1\0\0\1\0\1\21default_keybinds\2\25core.norg.completion\1\0\0\1\0\1\vengine\rnvim-cmp\21core.norg.dirman\vconfig\1\0\0\15workspaces\1\0\0\1\0\1\17my_workspace\f~/neorg\24core.norg.concealer\18core.defaults\1\0\0\nsetup\nneorg\frequire\0", "config", "neorg")
 time([[Config for neorg]], false)
+-- Config for: pretty-fold.nvim
+time([[Config for pretty-fold.nvim]], true)
+try_loadstring("\27LJ\2\n�\2\0\0\5\0\r\0\0196\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\5\0005\4\4\0=\4\6\0035\4\a\0=\4\b\3=\3\t\2B\0\2\0016\0\0\0'\2\n\0B\0\2\0029\0\v\0'\2\f\0B\0\2\1K\0\1\0\6h\21setup_keybinding\24pretty-fold.preview\rsections\nright\1\6\0\0\t┫ \27number_of_folded_lines\a: \15percentage\15 ┣━━\tleft\1\0\0\1\4\0\0\15━━┫ \fcontent\b┣\1\0\1\14fill_char\b━\nsetup\16pretty-fold\frequire\0", "config", "pretty-fold.nvim")
+time([[Config for pretty-fold.nvim]], false)
+-- Config for: vim-startify
+time([[Config for vim-startify]], true)
+try_loadstring("\27LJ\2\n>\0\0\2\0\3\0\0056\0\0\0009\0\1\0)\1\1\0=\1\2\0K\0\1\0!startify_session_persistence\6g\bvim\0", "config", "vim-startify")
+time([[Config for vim-startify]], false)
 -- Config for: blamer.nvim
 time([[Config for blamer.nvim]], true)
-try_loadstring("\27LJ\2\n0\0\0\2\0\3\0\0056\0\0\0009\0\1\0)\1\1\0=\1\2\0K\0\1\0\19blamer_enabled\6g\bvim\0", "config", "blamer.nvim")
+try_loadstring("\27LJ\2\n�\1\0\0\2\0\6\0\r6\0\0\0009\0\1\0)\1\1\0=\1\2\0006\0\0\0009\0\1\0)\1\0\0=\1\3\0006\0\0\0009\0\1\0'\1\5\0=\1\4\0K\0\1\0\r Blame: \18blamer_prefix blamer_show_in_visual_modes\19blamer_enabled\6g\bvim\0", "config", "blamer.nvim")
 time([[Config for blamer.nvim]], false)
--- Config for: sidebar.nvim
-time([[Config for sidebar.nvim]], true)
-try_loadstring("\27LJ\2\n�\1\0\0\4\0\b\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0=\3\5\0025\3\6\0=\3\a\2B\0\2\1K\0\1\0\nfiles\1\0\2\14icon_open\b\ticon\b\rsections\1\a\0\0\rdatetime\nfiles\bgit\fsymbols\16diagnostics\ntodos\1\0\2\topen\2\22section_separator\5\nsetup\17sidebar-nvim\frequire\0", "config", "sidebar.nvim")
-time([[Config for sidebar.nvim]], false)
 -- Config for: Comment.nvim
 time([[Config for Comment.nvim]], true)
 try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fComment\frequire\0", "config", "Comment.nvim")
