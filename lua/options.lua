@@ -51,7 +51,10 @@ vim.g.indent_blankline_filetype_exclude = { 'help' }
 vim.g.indent_blankline_buftype_exclude = { 'terminal', 'nofile', 'packer'}
 vim.g.indent_blankline_char_highlight = 'LineNr'
 
--- set space to <leade>
+-- netrw
+vim.g.netrw_bufsettings = 'noma nomod nonu nowrap ro buflisted'
+
+-- set space to <leader>
 vim.api.nvim_set_keymap('', '<Space>', '<Nop>', { noremap = true, silent=true})
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "

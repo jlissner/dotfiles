@@ -64,4 +64,13 @@ vim.g.bufferline = {
   -- Sets the name of unnamed buffers. By default format is "[Buffer X]"
   -- where X is the buffer number. But only a static string is accepted here.
   no_name_title = nil,
+
+  tree = {
+    open = function()
+       require'bufferline.state'.set_offset(35)
+    end,
+    close = function()
+       require'bufferline.state'.set_offset(0)
+    end
+  }
 }

@@ -26,8 +26,6 @@ mapKey("v", "<C-/>", "gbgv", { silent = true })
 mapKey("i", "<C-/>", "<ESC>mtgc`ta", { silent = true })
 
 -- window helpers
-mapKey("n", "<leader>v", "<C-w>v<C-w>l:Startify<CR>", opts)
-mapKey("n", "<leader>s", "<C-w>s<C-w>j:Startify<CR>", opts)
 mapKey("n", "<leader>1", "1<C-w><C-w>", opts) -- go to window 1-10
 mapKey("n", "<leader>2", "2<C-w><C-w>", opts)
 mapKey("n", "<leader>3", "3<C-w><C-w>", opts)
@@ -59,11 +57,6 @@ mapKey("i", "<C-S-k>", "<ESC>:m -2<CR>a", opts)
 mapKey("i", "<C-S-Up>", "<ESC>:m -2<CR>a", opts)
 mapKey("i", "<C-S-Down>", "<ESC>:m +1<CR>a", opts)
 mapKey("i", "<C-S-j>", "<ESC>:m +1<CR>a", opts)
-
--- go to normal mode with jj, jk, kj
-mapKey("i", "jj", "<ESC>l", opts)
-mapKey("i", "jk", "<ESC>l", opts)
-mapKey("i", "kj", "<ESC>l", opts)
 
 -- copy/paste
 mapKey("n", "Y", "yg$", opts) -- yank from cursor to end of line
@@ -107,7 +100,7 @@ mapKey("n", "gtm", "<cmd>Telescope marks<CR>", opts)
 mapKey("n", "gtb", "<cmd>Telescope buffers<CR>", opts)
 
 -- folding
-mapKey("n", "zc", "vibzf", { silent = true });
+mapKey("n", "zc", "vaIzf", { silent = true });
 
 -- barbar
 -- pick buffer
@@ -116,6 +109,9 @@ mapKey("n", "<leader>b", ":BufferPick<CR>", opts);
 -- Move to previous/next
 mapKey("n", "<S-Tab>", ":BufferPrevious<CR>", opts);
 mapKey("n", "<Tab>", ":BufferNext<CR>", opts);
+
+-- Toggle ZenMode
+mapKey("n", "<leader>zm", "<cmd>ZenMode<CR>", opts);
 
 -- Goto buffer in position...
 mapKey("n", "<C-1>", ":BufferGoto 1<CR>", opts);

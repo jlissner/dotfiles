@@ -39,15 +39,13 @@ require('packer').startup(function()
       require('sidebar-nvim').setup({
         open = false,
         sections = {
-          "datetime",
-          "files",
-          "symbols",
-          "diagnostics",
           "todos",
+          "files",
           "git",
         },
         section_separator = "",
         files = {
+          show_hidden = true,
           icon = "",
           icon_open = "",
         },
@@ -91,6 +89,7 @@ require('packer').startup(function()
     wants = {'nvim-treesitter'}, -- or require if not used so far
     after = {'nvim-cmp'} -- if a completion plugin is using tabs load it before
   }
+  use 'michaeljsmith/vim-indent-object' -- ai, aI, ii, iI
 
   use{ 'anuvyklack/pretty-fold.nvim', -- pretty folds
      config = function()
@@ -128,15 +127,39 @@ require('packer').startup(function()
                         engine = 'nvim-cmp'
                     }
                 },
-                ["core.keybinds"] = {
-                   config = {
-                     default_keybinds = true,
-                   },
-                },
+                ["core.keybinds"] = {},
+                ['core.queries.native'] = {}, -- Required for presenter
+                ['core.integrations.treesitter'] = {}, -- Required for presenter
+                ['core.ui'] = {}, -- Required for presenter
+                ['core.mode'] = {}, -- Required for presenter
+                ['core.neorgcmd'] = {}, -- Required for presenter
+                ['core.presenter'] = { config = { zen_mode = 'zen_mode' }}, -- Allows for presenter
             },
         }
     end,
     requires = 'nvim-lua/plenary.nvim'
+  }
+
+  -- :ZenMode to toggle
+  use {
+    "folke/zen-mode.nvim",
+    config = function()
+      require("zen-mode").setup {
+        -- https://github.com/folke/zen-mode.nvim#%EF%B8%8F-configuration
+      }
+    end
+  }
+
+  -- dulls text you're not working on
+  use {
+    "folke/twilight.nvim",
+    config = function()
+      require("twilight").setup {
+        -- your configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
+      }
+    end
   }
 
   -- status line
