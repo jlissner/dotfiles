@@ -34,24 +34,6 @@ require('packer').startup(function()
     requires = {'kyazdani42/nvim-web-devicons'}
   }
   use 'tpope/vim-vinegar' -- better netrw
-  use {'sidebar-nvim/sidebar.nvim',
-    config = function()
-      require('sidebar-nvim').setup({
-        open = false,
-        sections = {
-          "todos",
-          "files",
-          "git",
-        },
-        section_separator = "",
-        files = {
-          show_hidden = true,
-          icon = "",
-          icon_open = "",
-        },
-      })
-    end
-  }
 
   -- utils
   use 'tpope/vim-surround' -- crud surrounds
@@ -115,32 +97,21 @@ require('packer').startup(function()
             load = {
                 ['core.defaults'] = {}, -- Load all the default modules
                 ['core.norg.concealer'] = {}, -- Allows for use of icons
-                ['core.norg.dirman'] = { -- Manage your directories with Neorg
-                    config = {
-                        workspaces = {
-                            my_workspace = '~/neorg'
-                        }
-                    }
-                },
-                ['core.norg.completion'] = {
-                    config = {
-                        engine = 'nvim-cmp'
-                    }
-                },
-                ["core.keybinds"] = {},
+                ['core.norg.dirman'] = { config = { workspaces = { notes = '~/notes' }}}, -- Manage your directories with Neorg
+                ['core.norg.completion'] = { config = { engine = 'nvim-cmp' }}, -- enable completion
                 ['core.queries.native'] = {}, -- Required for presenter
-                ['core.integrations.treesitter'] = {}, -- Required for presenter
                 ['core.ui'] = {}, -- Required for presenter
-                ['core.mode'] = {}, -- Required for presenter
-                ['core.neorgcmd'] = {}, -- Required for presenter
-                ['core.presenter'] = { config = { zen_mode = 'zen_mode' }}, -- Allows for presenter
+                ['core.presenter'] = { config = { zen_mode = 'zen-mode' }}, -- Allows for presenter
+                ['core.norg.qol.toc'] = {}, -- auto generate a table of contents
+                ["core.gtd.base"] = { config = { workspace = 'notes' }}, -- get thigns done
+                ["core.norg.journal"] = { config = { workspace = 'notes', journal_folder = '/journal', strategy = 'flat' }},
             },
         }
     end,
     requires = 'nvim-lua/plenary.nvim'
   }
 
-  -- :ZenMode to toggle
+  -- :ZenMode (<leader>zm) to toggle
   use {
     "folke/zen-mode.nvim",
     config = function()
