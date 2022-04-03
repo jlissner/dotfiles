@@ -111,28 +111,6 @@ require('packer').startup(function()
     requires = 'nvim-lua/plenary.nvim'
   }
 
-  -- :ZenMode (<leader>zm) to toggle
-  use {
-    "folke/zen-mode.nvim",
-    config = function()
-      require("zen-mode").setup {
-        -- https://github.com/folke/zen-mode.nvim#%EF%B8%8F-configuration
-      }
-    end
-  }
-
-  -- dulls text you're not working on
-  use {
-    "folke/twilight.nvim",
-    config = function()
-      require("twilight").setup {
-        -- your configuration comes here
-        -- or leave it empty to use the default settings
-        -- refer to the configuration section below
-      }
-    end
-  }
-
   -- status line
   use {
     'nvim-lualine/lualine.nvim',
@@ -145,14 +123,6 @@ require('packer').startup(function()
     'lewis6991/gitsigns.nvim',
     requires = { 'nvim-lua/plenary.nvim' },
     config = function() require('gitsigns').setup() end
-  }
-  use {
-    'APZelos/blamer.nvim',
-    config = function()
-      vim.g.blamer_enabled = 1
-      vim.g.blamer_show_in_visual_modes = 0
-      vim.g.blamer_prefix = ' Blame: '
-    end
   }
 
   -- language stuff

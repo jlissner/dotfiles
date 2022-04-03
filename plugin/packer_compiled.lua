@@ -80,12 +80,6 @@ _G.packer_plugins = {
     path = "C:\\Users\\joe.lissner\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\barbar.nvim",
     url = "https://github.com/romgrk/barbar.nvim"
   },
-  ["blamer.nvim"] = {
-    config = { "\27LJ\2\nƒ\1\0\0\2\0\6\0\r6\0\0\0009\0\1\0)\1\1\0=\1\2\0006\0\0\0009\0\1\0)\1\0\0=\1\3\0006\0\0\0009\0\1\0'\1\5\0=\1\4\0K\0\1\0\r Blame: \18blamer_prefix blamer_show_in_visual_modes\19blamer_enabled\6g\bvim\0" },
-    loaded = true,
-    path = "C:\\Users\\joe.lissner\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\blamer.nvim",
-    url = "https://github.com/APZelos/blamer.nvim"
-  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "C:\\Users\\joe.lissner\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\cmp-buffer",
@@ -133,7 +127,7 @@ _G.packer_plugins = {
     url = "https://github.com/nvim-lualine/lualine.nvim"
   },
   neorg = {
-    config = { "\27LJ\2\n˜\4\0\0\a\0\29\0)6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\27\0005\3\3\0004\4\0\0=\4\4\0034\4\0\0=\4\5\0035\4\t\0005\5\a\0005\6\6\0=\6\b\5=\5\n\4=\4\v\0035\4\r\0005\5\f\0=\5\n\4=\4\14\0034\4\0\0=\4\15\0034\4\0\0=\4\16\0035\4\18\0005\5\17\0=\5\n\4=\4\19\0034\4\0\0=\4\20\0035\4\22\0005\5\21\0=\5\n\4=\4\23\0035\4\25\0005\5\24\0=\5\n\4=\4\26\3=\3\28\2B\0\2\1K\0\1\0\tload\1\0\0\22core.norg.journal\1\0\0\1\0\3\rstrategy\tflat\19journal_folder\r/journal\14workspace\nnotes\18core.gtd.base\1\0\0\1\0\1\14workspace\nnotes\22core.norg.qol.toc\19core.presenter\1\0\0\1\0\1\rzen_mode\rzen-mode\fcore.ui\24core.queries.native\25core.norg.completion\1\0\0\1\0\1\vengine\rnvim-cmp\21core.norg.dirman\vconfig\1\0\0\15workspaces\1\0\0\1\0\1\nnotes\f~/notes\24core.norg.concealer\18core.defaults\1\0\0\nsetup\nneorg\frequire\0" },
+    config = { "\27LJ\2\n˜\4\0\0\a\0\29\0)6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\27\0005\3\3\0004\4\0\0=\4\4\0034\4\0\0=\4\5\0035\4\t\0005\5\a\0005\6\6\0=\6\b\5=\5\n\4=\4\v\0035\4\r\0005\5\f\0=\5\n\4=\4\14\0034\4\0\0=\4\15\0034\4\0\0=\4\16\0035\4\18\0005\5\17\0=\5\n\4=\4\19\0034\4\0\0=\4\20\0035\4\22\0005\5\21\0=\5\n\4=\4\23\0035\4\25\0005\5\24\0=\5\n\4=\4\26\3=\3\28\2B\0\2\1K\0\1\0\tload\1\0\0\22core.norg.journal\1\0\0\1\0\3\rstrategy\tflat\14workspace\nnotes\19journal_folder\r/journal\18core.gtd.base\1\0\0\1\0\1\14workspace\nnotes\22core.norg.qol.toc\19core.presenter\1\0\0\1\0\1\rzen_mode\rzen-mode\fcore.ui\24core.queries.native\25core.norg.completion\1\0\0\1\0\1\vengine\rnvim-cmp\21core.norg.dirman\vconfig\1\0\0\15workspaces\1\0\0\1\0\1\nnotes\f~/notes\24core.norg.concealer\18core.defaults\1\0\0\nsetup\nneorg\frequire\0" },
     loaded = true,
     path = "C:\\Users\\joe.lissner\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\neorg",
     url = "https://github.com/nvim-neorg/neorg"
@@ -196,7 +190,7 @@ _G.packer_plugins = {
     url = "https://github.com/anuvyklack/pretty-fold.nvim"
   },
   ["tabout.nvim"] = {
-    config = { "\27LJ\2\në\2\0\0\5\0\f\0\0236\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0004\3\a\0005\4\4\0>\4\1\0035\4\5\0>\4\2\0035\4\6\0>\4\3\0035\4\a\0>\4\4\0035\4\b\0>\4\5\0035\4\t\0>\4\6\3=\3\n\0024\3\0\0=\3\v\2B\0\2\1K\0\1\0\fexclude\ftabouts\1\0\2\nclose\6}\topen\6{\1\0\2\nclose\6]\topen\6[\1\0\2\nclose\6)\topen\6(\1\0\2\nclose\6`\topen\6`\1\0\2\nclose\6\"\topen\6\"\1\0\2\nclose\6'\topen\6'\1\0\a\21ignore_beginning\2\15completion\2\21enable_backwards\2\21act_as_shift_tab\1\15act_as_tab\2\21backwards_tabkey\f<S-Tab>\vtabkey\n<Tab>\nsetup\vtabout\frequire\0" },
+    config = { "\27LJ\2\në\2\0\0\5\0\f\0\0236\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0004\3\a\0005\4\4\0>\4\1\0035\4\5\0>\4\2\0035\4\6\0>\4\3\0035\4\a\0>\4\4\0035\4\b\0>\4\5\0035\4\t\0>\4\6\3=\3\n\0024\3\0\0=\3\v\2B\0\2\1K\0\1\0\fexclude\ftabouts\1\0\2\nclose\6}\topen\6{\1\0\2\nclose\6]\topen\6[\1\0\2\nclose\6)\topen\6(\1\0\2\nclose\6`\topen\6`\1\0\2\nclose\6\"\topen\6\"\1\0\2\nclose\6'\topen\6'\1\0\a\15completion\2\21enable_backwards\2\21act_as_shift_tab\1\15act_as_tab\2\21backwards_tabkey\f<S-Tab>\vtabkey\n<Tab>\21ignore_beginning\2\nsetup\vtabout\frequire\0" },
     load_after = {},
     loaded = true,
     needs_bufread = false,
@@ -213,12 +207,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "C:\\Users\\joe.lissner\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\tender.vim",
     url = "https://github.com/jacoborus/tender.vim"
-  },
-  ["twilight.nvim"] = {
-    config = { "\27LJ\2\n:\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\rtwilight\frequire\0" },
-    loaded = true,
-    path = "C:\\Users\\joe.lissner\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\twilight.nvim",
-    url = "https://github.com/folke/twilight.nvim"
   },
   ["vim-floaterm"] = {
     loaded = true,
@@ -265,55 +253,37 @@ _G.packer_plugins = {
     loaded = true,
     path = "C:\\Users\\joe.lissner\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-vsnip",
     url = "https://github.com/hrsh7th/vim-vsnip"
-  },
-  ["zen-mode.nvim"] = {
-    config = { "\27LJ\2\n:\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\rzen-mode\frequire\0" },
-    loaded = true,
-    path = "C:\\Users\\joe.lissner\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\zen-mode.nvim",
-    url = "https://github.com/folke/zen-mode.nvim"
   }
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: gitsigns.nvim
+time([[Config for gitsigns.nvim]], true)
+try_loadstring("\27LJ\2\n6\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\rgitsigns\frequire\0", "config", "gitsigns.nvim")
+time([[Config for gitsigns.nvim]], false)
+-- Config for: Comment.nvim
+time([[Config for Comment.nvim]], true)
+try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fComment\frequire\0", "config", "Comment.nvim")
+time([[Config for Comment.nvim]], false)
+-- Config for: pretty-fold.nvim
+time([[Config for pretty-fold.nvim]], true)
+try_loadstring("\27LJ\2\n\2\0\0\5\0\r\0\0196\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\5\0005\4\4\0=\4\6\0035\4\a\0=\4\b\3=\3\t\2B\0\2\0016\0\0\0'\2\n\0B\0\2\0029\0\v\0'\2\f\0B\0\2\1K\0\1\0\6h\21setup_keybinding\24pretty-fold.preview\rsections\nright\1\6\0\0\tâ”« \27number_of_folded_lines\a: \15percentage\15 â”£â”â”\tleft\1\0\0\1\4\0\0\15â”â”â”« \fcontent\bâ”£\1\0\1\14fill_char\bâ”\nsetup\16pretty-fold\frequire\0", "config", "pretty-fold.nvim")
+time([[Config for pretty-fold.nvim]], false)
 -- Config for: neorg
 time([[Config for neorg]], true)
-try_loadstring("\27LJ\2\n˜\4\0\0\a\0\29\0)6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\27\0005\3\3\0004\4\0\0=\4\4\0034\4\0\0=\4\5\0035\4\t\0005\5\a\0005\6\6\0=\6\b\5=\5\n\4=\4\v\0035\4\r\0005\5\f\0=\5\n\4=\4\14\0034\4\0\0=\4\15\0034\4\0\0=\4\16\0035\4\18\0005\5\17\0=\5\n\4=\4\19\0034\4\0\0=\4\20\0035\4\22\0005\5\21\0=\5\n\4=\4\23\0035\4\25\0005\5\24\0=\5\n\4=\4\26\3=\3\28\2B\0\2\1K\0\1\0\tload\1\0\0\22core.norg.journal\1\0\0\1\0\3\rstrategy\tflat\19journal_folder\r/journal\14workspace\nnotes\18core.gtd.base\1\0\0\1\0\1\14workspace\nnotes\22core.norg.qol.toc\19core.presenter\1\0\0\1\0\1\rzen_mode\rzen-mode\fcore.ui\24core.queries.native\25core.norg.completion\1\0\0\1\0\1\vengine\rnvim-cmp\21core.norg.dirman\vconfig\1\0\0\15workspaces\1\0\0\1\0\1\nnotes\f~/notes\24core.norg.concealer\18core.defaults\1\0\0\nsetup\nneorg\frequire\0", "config", "neorg")
+try_loadstring("\27LJ\2\n˜\4\0\0\a\0\29\0)6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\27\0005\3\3\0004\4\0\0=\4\4\0034\4\0\0=\4\5\0035\4\t\0005\5\a\0005\6\6\0=\6\b\5=\5\n\4=\4\v\0035\4\r\0005\5\f\0=\5\n\4=\4\14\0034\4\0\0=\4\15\0034\4\0\0=\4\16\0035\4\18\0005\5\17\0=\5\n\4=\4\19\0034\4\0\0=\4\20\0035\4\22\0005\5\21\0=\5\n\4=\4\23\0035\4\25\0005\5\24\0=\5\n\4=\4\26\3=\3\28\2B\0\2\1K\0\1\0\tload\1\0\0\22core.norg.journal\1\0\0\1\0\3\rstrategy\tflat\14workspace\nnotes\19journal_folder\r/journal\18core.gtd.base\1\0\0\1\0\1\14workspace\nnotes\22core.norg.qol.toc\19core.presenter\1\0\0\1\0\1\rzen_mode\rzen-mode\fcore.ui\24core.queries.native\25core.norg.completion\1\0\0\1\0\1\vengine\rnvim-cmp\21core.norg.dirman\vconfig\1\0\0\15workspaces\1\0\0\1\0\1\nnotes\f~/notes\24core.norg.concealer\18core.defaults\1\0\0\nsetup\nneorg\frequire\0", "config", "neorg")
 time([[Config for neorg]], false)
 -- Config for: vim-startify
 time([[Config for vim-startify]], true)
 try_loadstring("\27LJ\2\n>\0\0\2\0\3\0\0056\0\0\0009\0\1\0)\1\1\0=\1\2\0K\0\1\0!startify_session_persistence\6g\bvim\0", "config", "vim-startify")
 time([[Config for vim-startify]], false)
--- Config for: pretty-fold.nvim
-time([[Config for pretty-fold.nvim]], true)
-try_loadstring("\27LJ\2\n\2\0\0\5\0\r\0\0196\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\5\0005\4\4\0=\4\6\0035\4\a\0=\4\b\3=\3\t\2B\0\2\0016\0\0\0'\2\n\0B\0\2\0029\0\v\0'\2\f\0B\0\2\1K\0\1\0\6h\21setup_keybinding\24pretty-fold.preview\rsections\nright\1\6\0\0\tâ”« \27number_of_folded_lines\a: \15percentage\15 â”£â”â”\tleft\1\0\0\1\4\0\0\15â”â”â”« \fcontent\bâ”£\1\0\1\14fill_char\bâ”\nsetup\16pretty-fold\frequire\0", "config", "pretty-fold.nvim")
-time([[Config for pretty-fold.nvim]], false)
--- Config for: gitsigns.nvim
-time([[Config for gitsigns.nvim]], true)
-try_loadstring("\27LJ\2\n6\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\rgitsigns\frequire\0", "config", "gitsigns.nvim")
-time([[Config for gitsigns.nvim]], false)
--- Config for: blamer.nvim
-time([[Config for blamer.nvim]], true)
-try_loadstring("\27LJ\2\nƒ\1\0\0\2\0\6\0\r6\0\0\0009\0\1\0)\1\1\0=\1\2\0006\0\0\0009\0\1\0)\1\0\0=\1\3\0006\0\0\0009\0\1\0'\1\5\0=\1\4\0K\0\1\0\r Blame: \18blamer_prefix blamer_show_in_visual_modes\19blamer_enabled\6g\bvim\0", "config", "blamer.nvim")
-time([[Config for blamer.nvim]], false)
--- Config for: twilight.nvim
-time([[Config for twilight.nvim]], true)
-try_loadstring("\27LJ\2\n:\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\rtwilight\frequire\0", "config", "twilight.nvim")
-time([[Config for twilight.nvim]], false)
--- Config for: Comment.nvim
-time([[Config for Comment.nvim]], true)
-try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fComment\frequire\0", "config", "Comment.nvim")
-time([[Config for Comment.nvim]], false)
--- Config for: zen-mode.nvim
-time([[Config for zen-mode.nvim]], true)
-try_loadstring("\27LJ\2\n:\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\rzen-mode\frequire\0", "config", "zen-mode.nvim")
-time([[Config for zen-mode.nvim]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)
 vim.cmd [[ packadd nvim-cmp ]]
 vim.cmd [[ packadd tabout.nvim ]]
 
 -- Config for: tabout.nvim
-try_loadstring("\27LJ\2\në\2\0\0\5\0\f\0\0236\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0004\3\a\0005\4\4\0>\4\1\0035\4\5\0>\4\2\0035\4\6\0>\4\3\0035\4\a\0>\4\4\0035\4\b\0>\4\5\0035\4\t\0>\4\6\3=\3\n\0024\3\0\0=\3\v\2B\0\2\1K\0\1\0\fexclude\ftabouts\1\0\2\nclose\6}\topen\6{\1\0\2\nclose\6]\topen\6[\1\0\2\nclose\6)\topen\6(\1\0\2\nclose\6`\topen\6`\1\0\2\nclose\6\"\topen\6\"\1\0\2\nclose\6'\topen\6'\1\0\a\21ignore_beginning\2\15completion\2\21enable_backwards\2\21act_as_shift_tab\1\15act_as_tab\2\21backwards_tabkey\f<S-Tab>\vtabkey\n<Tab>\nsetup\vtabout\frequire\0", "config", "tabout.nvim")
+try_loadstring("\27LJ\2\në\2\0\0\5\0\f\0\0236\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0004\3\a\0005\4\4\0>\4\1\0035\4\5\0>\4\2\0035\4\6\0>\4\3\0035\4\a\0>\4\4\0035\4\b\0>\4\5\0035\4\t\0>\4\6\3=\3\n\0024\3\0\0=\3\v\2B\0\2\1K\0\1\0\fexclude\ftabouts\1\0\2\nclose\6}\topen\6{\1\0\2\nclose\6]\topen\6[\1\0\2\nclose\6)\topen\6(\1\0\2\nclose\6`\topen\6`\1\0\2\nclose\6\"\topen\6\"\1\0\2\nclose\6'\topen\6'\1\0\a\15completion\2\21enable_backwards\2\21act_as_shift_tab\1\15act_as_tab\2\21backwards_tabkey\f<S-Tab>\vtabkey\n<Tab>\21ignore_beginning\2\nsetup\vtabout\frequire\0", "config", "tabout.nvim")
 
 time([[Sequenced loading]], false)
 if should_profile then save_profiles() end

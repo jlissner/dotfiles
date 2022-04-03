@@ -1,4 +1,4 @@
-local M = { foo = true }
+local M = {}
 
 function M.FlestFile()
   local rootDir = vim.loop.cwd()
