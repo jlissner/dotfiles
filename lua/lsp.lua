@@ -116,7 +116,7 @@ lspconfig.tsserver.setup({
         setBufferKeymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
         setBufferKeymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
         setBufferKeymap('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
-        setBufferKeymap('n', '<leader>ca', '<cmd>Telescope lsp_code_actions<CR>', opts)
+        setBufferKeymap('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
         setBufferKeymap('n', 'gte', '<cmd>w | Telescope diagnostics<CR>', opts)
         setBufferKeymap('n', 'gtne', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
         setBufferKeymap('n', 'gtnE', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)

@@ -1,7 +1,7 @@
 vim.o.compatible = false
 vim.o.encoding = "utf-8"
-vim.o.fileformat = "unix"
-vim.o.fileformats = "unix"
+vim.o.fileformat = "dos"
+vim.o.fileformats = "dos"
 vim.o.backspace = "indent,eol,start" -- backspace works on every char in insert mode
 vim.o.hidden = true
 vim.o.clipboard = 'unnamedplus' -- use system clipboard by default
@@ -50,9 +50,6 @@ vim.g.indent_blankline_char = "┊"
 vim.g.indent_blankline_filetype_exclude = { 'help' }
 vim.g.indent_blankline_buftype_exclude = { 'terminal', 'nofile', 'packer'}
 vim.g.indent_blankline_char_highlight = 'LineNr'
-
--- netrw
-vim.g.netrw_bufsettings = 'noma nomod nonu nowrap ro buflisted'
 
 -- set space to <leader>
 vim.api.nvim_set_keymap('', '<Space>', '<Nop>', { noremap = true, silent=true})

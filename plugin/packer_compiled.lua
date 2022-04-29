@@ -69,16 +69,16 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
-  ["Comment.nvim"] = {
-    config = { "\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fComment\frequire\0" },
+  ["alpha-nvim"] = {
+    config = { "\27LJ\2\na\0\0\5\0\5\0\n6\0\0\0'\2\1\0B\0\2\0029\0\2\0006\2\0\0'\4\3\0B\2\2\0029\2\4\2B\0\2\1K\0\1\0\vconfig\27alpha.themes.dashboard\nsetup\nalpha\frequire\0" },
     loaded = true,
-    path = "C:\\Users\\joe.lissner\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\Comment.nvim",
-    url = "https://github.com/numToStr/Comment.nvim"
+    path = "C:\\Users\\joe.lissner\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\alpha-nvim",
+    url = "https://github.com/goolord/alpha-nvim"
   },
-  ["barbar.nvim"] = {
+  ["bufferline.nvim"] = {
     loaded = true,
-    path = "C:\\Users\\joe.lissner\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\barbar.nvim",
-    url = "https://github.com/romgrk/barbar.nvim"
+    path = "C:\\Users\\joe.lissner\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\bufferline.nvim",
+    url = "https://github.com/akinsho/bufferline.nvim"
   },
   ["cmp-buffer"] = {
     loaded = true,
@@ -126,21 +126,25 @@ _G.packer_plugins = {
     path = "C:\\Users\\joe.lissner\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
   },
-  neorg = {
-    config = { "\27LJ\2\n˜\4\0\0\a\0\29\0)6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\27\0005\3\3\0004\4\0\0=\4\4\0034\4\0\0=\4\5\0035\4\t\0005\5\a\0005\6\6\0=\6\b\5=\5\n\4=\4\v\0035\4\r\0005\5\f\0=\5\n\4=\4\14\0034\4\0\0=\4\15\0034\4\0\0=\4\16\0035\4\18\0005\5\17\0=\5\n\4=\4\19\0034\4\0\0=\4\20\0035\4\22\0005\5\21\0=\5\n\4=\4\23\0035\4\25\0005\5\24\0=\5\n\4=\4\26\3=\3\28\2B\0\2\1K\0\1\0\tload\1\0\0\22core.norg.journal\1\0\0\1\0\3\rstrategy\tflat\14workspace\nnotes\19journal_folder\r/journal\18core.gtd.base\1\0\0\1\0\1\14workspace\nnotes\22core.norg.qol.toc\19core.presenter\1\0\0\1\0\1\rzen_mode\rzen-mode\fcore.ui\24core.queries.native\25core.norg.completion\1\0\0\1\0\1\vengine\rnvim-cmp\21core.norg.dirman\vconfig\1\0\0\15workspaces\1\0\0\1\0\1\nnotes\f~/notes\24core.norg.concealer\18core.defaults\1\0\0\nsetup\nneorg\frequire\0" },
-    loaded = true,
-    path = "C:\\Users\\joe.lissner\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\neorg",
-    url = "https://github.com/nvim-neorg/neorg"
-  },
   ["neoscroll.nvim"] = {
     loaded = true,
     path = "C:\\Users\\joe.lissner\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\neoscroll.nvim",
     url = "https://github.com/karb94/neoscroll.nvim"
   },
+  ["neovim-session-manager"] = {
+    loaded = true,
+    path = "C:\\Users\\joe.lissner\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\neovim-session-manager",
+    url = "https://github.com/Shatur/neovim-session-manager"
+  },
   ["null-ls.nvim"] = {
     loaded = true,
     path = "C:\\Users\\joe.lissner\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\null-ls.nvim",
     url = "https://github.com/jose-elias-alvarez/null-ls.nvim"
+  },
+  ["nvim-bufdel"] = {
+    loaded = true,
+    path = "C:\\Users\\joe.lissner\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-bufdel",
+    url = "https://github.com/ojroques/nvim-bufdel"
   },
   ["nvim-cmp"] = {
     loaded = true,
@@ -161,6 +165,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "C:\\Users\\joe.lissner\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
+  },
+  ["nvim-tree.lua"] = {
+    loaded = true,
+    path = "C:\\Users\\joe.lissner\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-tree.lua",
+    url = "https://github.com/kyazdani42/nvim-tree.lua"
   },
   ["nvim-treesitter"] = {
     loaded = true,
@@ -189,14 +198,10 @@ _G.packer_plugins = {
     path = "C:\\Users\\joe.lissner\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\pretty-fold.nvim",
     url = "https://github.com/anuvyklack/pretty-fold.nvim"
   },
-  ["tabout.nvim"] = {
-    config = { "\27LJ\2\në\2\0\0\5\0\f\0\0236\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0004\3\a\0005\4\4\0>\4\1\0035\4\5\0>\4\2\0035\4\6\0>\4\3\0035\4\a\0>\4\4\0035\4\b\0>\4\5\0035\4\t\0>\4\6\3=\3\n\0024\3\0\0=\3\v\2B\0\2\1K\0\1\0\fexclude\ftabouts\1\0\2\nclose\6}\topen\6{\1\0\2\nclose\6]\topen\6[\1\0\2\nclose\6)\topen\6(\1\0\2\nclose\6`\topen\6`\1\0\2\nclose\6\"\topen\6\"\1\0\2\nclose\6'\topen\6'\1\0\a\15completion\2\21enable_backwards\2\21act_as_shift_tab\1\15act_as_tab\2\21backwards_tabkey\f<S-Tab>\vtabkey\n<Tab>\21ignore_beginning\2\nsetup\vtabout\frequire\0" },
-    load_after = {},
+  ["telescope-ui-select.nvim"] = {
     loaded = true,
-    needs_bufread = false,
-    path = "C:\\Users\\joe.lissner\\AppData\\Local\\nvim-data\\site\\pack\\packer\\opt\\tabout.nvim",
-    url = "https://github.com/abecodes/tabout.nvim",
-    wants = { "nvim-treesitter" }
+    path = "C:\\Users\\joe.lissner\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\telescope-ui-select.nvim",
+    url = "https://github.com/nvim-telescope/telescope-ui-select.nvim"
   },
   ["telescope.nvim"] = {
     loaded = true,
@@ -207,6 +212,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "C:\\Users\\joe.lissner\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\tender.vim",
     url = "https://github.com/jacoborus/tender.vim"
+  },
+  ["vim-commentary"] = {
+    loaded = true,
+    path = "C:\\Users\\joe.lissner\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-commentary",
+    url = "https://github.com/tpope/vim-commentary"
   },
   ["vim-floaterm"] = {
     loaded = true,
@@ -228,26 +238,10 @@ _G.packer_plugins = {
     path = "C:\\Users\\joe.lissner\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-repeat",
     url = "https://github.com/tpope/vim-repeat"
   },
-  ["vim-startify"] = {
-    config = { "\27LJ\2\n>\0\0\2\0\3\0\0056\0\0\0009\0\1\0)\1\1\0=\1\2\0K\0\1\0!startify_session_persistence\6g\bvim\0" },
-    loaded = true,
-    path = "C:\\Users\\joe.lissner\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-startify",
-    url = "https://github.com/mhinz/vim-startify"
-  },
-  ["vim-subversive"] = {
-    loaded = true,
-    path = "C:\\Users\\joe.lissner\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-subversive",
-    url = "https://github.com/svermeulen/vim-subversive"
-  },
   ["vim-surround"] = {
     loaded = true,
     path = "C:\\Users\\joe.lissner\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-surround",
     url = "https://github.com/tpope/vim-surround"
-  },
-  ["vim-vinegar"] = {
-    loaded = true,
-    path = "C:\\Users\\joe.lissner\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-vinegar",
-    url = "https://github.com/tpope/vim-vinegar"
   },
   ["vim-vsnip"] = {
     loaded = true,
@@ -261,31 +255,14 @@ time([[Defining packer_plugins]], false)
 time([[Config for gitsigns.nvim]], true)
 try_loadstring("\27LJ\2\n6\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\rgitsigns\frequire\0", "config", "gitsigns.nvim")
 time([[Config for gitsigns.nvim]], false)
--- Config for: Comment.nvim
-time([[Config for Comment.nvim]], true)
-try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fComment\frequire\0", "config", "Comment.nvim")
-time([[Config for Comment.nvim]], false)
 -- Config for: pretty-fold.nvim
 time([[Config for pretty-fold.nvim]], true)
 try_loadstring("\27LJ\2\n\2\0\0\5\0\r\0\0196\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\5\0005\4\4\0=\4\6\0035\4\a\0=\4\b\3=\3\t\2B\0\2\0016\0\0\0'\2\n\0B\0\2\0029\0\v\0'\2\f\0B\0\2\1K\0\1\0\6h\21setup_keybinding\24pretty-fold.preview\rsections\nright\1\6\0\0\tâ”« \27number_of_folded_lines\a: \15percentage\15 â”£â”â”\tleft\1\0\0\1\4\0\0\15â”â”â”« \fcontent\bâ”£\1\0\1\14fill_char\bâ”\nsetup\16pretty-fold\frequire\0", "config", "pretty-fold.nvim")
 time([[Config for pretty-fold.nvim]], false)
--- Config for: neorg
-time([[Config for neorg]], true)
-try_loadstring("\27LJ\2\n˜\4\0\0\a\0\29\0)6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\27\0005\3\3\0004\4\0\0=\4\4\0034\4\0\0=\4\5\0035\4\t\0005\5\a\0005\6\6\0=\6\b\5=\5\n\4=\4\v\0035\4\r\0005\5\f\0=\5\n\4=\4\14\0034\4\0\0=\4\15\0034\4\0\0=\4\16\0035\4\18\0005\5\17\0=\5\n\4=\4\19\0034\4\0\0=\4\20\0035\4\22\0005\5\21\0=\5\n\4=\4\23\0035\4\25\0005\5\24\0=\5\n\4=\4\26\3=\3\28\2B\0\2\1K\0\1\0\tload\1\0\0\22core.norg.journal\1\0\0\1\0\3\rstrategy\tflat\14workspace\nnotes\19journal_folder\r/journal\18core.gtd.base\1\0\0\1\0\1\14workspace\nnotes\22core.norg.qol.toc\19core.presenter\1\0\0\1\0\1\rzen_mode\rzen-mode\fcore.ui\24core.queries.native\25core.norg.completion\1\0\0\1\0\1\vengine\rnvim-cmp\21core.norg.dirman\vconfig\1\0\0\15workspaces\1\0\0\1\0\1\nnotes\f~/notes\24core.norg.concealer\18core.defaults\1\0\0\nsetup\nneorg\frequire\0", "config", "neorg")
-time([[Config for neorg]], false)
--- Config for: vim-startify
-time([[Config for vim-startify]], true)
-try_loadstring("\27LJ\2\n>\0\0\2\0\3\0\0056\0\0\0009\0\1\0)\1\1\0=\1\2\0K\0\1\0!startify_session_persistence\6g\bvim\0", "config", "vim-startify")
-time([[Config for vim-startify]], false)
--- Load plugins in order defined by `after`
-time([[Sequenced loading]], true)
-vim.cmd [[ packadd nvim-cmp ]]
-vim.cmd [[ packadd tabout.nvim ]]
-
--- Config for: tabout.nvim
-try_loadstring("\27LJ\2\në\2\0\0\5\0\f\0\0236\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0004\3\a\0005\4\4\0>\4\1\0035\4\5\0>\4\2\0035\4\6\0>\4\3\0035\4\a\0>\4\4\0035\4\b\0>\4\5\0035\4\t\0>\4\6\3=\3\n\0024\3\0\0=\3\v\2B\0\2\1K\0\1\0\fexclude\ftabouts\1\0\2\nclose\6}\topen\6{\1\0\2\nclose\6]\topen\6[\1\0\2\nclose\6)\topen\6(\1\0\2\nclose\6`\topen\6`\1\0\2\nclose\6\"\topen\6\"\1\0\2\nclose\6'\topen\6'\1\0\a\15completion\2\21enable_backwards\2\21act_as_shift_tab\1\15act_as_tab\2\21backwards_tabkey\f<S-Tab>\vtabkey\n<Tab>\21ignore_beginning\2\nsetup\vtabout\frequire\0", "config", "tabout.nvim")
-
-time([[Sequenced loading]], false)
+-- Config for: alpha-nvim
+time([[Config for alpha-nvim]], true)
+try_loadstring("\27LJ\2\na\0\0\5\0\5\0\n6\0\0\0'\2\1\0B\0\2\0029\0\2\0006\2\0\0'\4\3\0B\2\2\0029\2\4\2B\0\2\1K\0\1\0\vconfig\27alpha.themes.dashboard\nsetup\nalpha\frequire\0", "config", "alpha-nvim")
+time([[Config for alpha-nvim]], false)
 if should_profile then save_profiles() end
 
 end)

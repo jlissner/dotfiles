@@ -18,59 +18,41 @@ local use = require('packer').use
 require('packer').startup(function()
   use {'wbthomason/packer.nvim', opt = true}
 
-  -- project navigation
+  -- IDE-ish stuff
   use { -- start screen
-    'mhinz/vim-startify',
-    config = function()
-      vim.g.startify_session_persistence = 1
+    'goolord/alpha-nvim',
+    config = function ()
+        require'alpha'.setup(require'alpha.themes.dashboard'.config)
     end
   }
+  use 'Shatur/neovim-session-manager' -- session manager
+
   use { -- file finder
     'nvim-telescope/telescope.nvim',
     requires = { 'nvim-lua/plenary.nvim' }
   }
-  use { -- buffer tabs
-    'romgrk/barbar.nvim',
+
+  use { -- visualize buffer as tabs
+    'akinsho/bufferline.nvim',
+    tag = "*",
     requires = {'kyazdani42/nvim-web-devicons'}
   }
-  use 'tpope/vim-vinegar' -- better netrw
 
+  use { 'ojroques/nvim-bufdel' } -- better buffer management
+
+  use { -- file explorer
+    'kyazdani42/nvim-tree.lua',
+    requires = {
+      'kyazdani42/nvim-web-devicons', -- optional, for file icon
+    }
+  }
   -- utils
   use 'tpope/vim-surround' -- crud surrounds
   use 'tpope/vim-repeat' -- make repeat command work more predicably
-  use { -- commenting and uncommenting stuff
-    'numToStr/Comment.nvim',
-    config = function() require('Comment').setup() end
-  }
+  use 'tpope/vim-commentary' -- commenting and uncommenting stuff
   use 'karb94/neoscroll.nvim' -- smooth scrolling
   use 'ggandor/lightspeed.nvim' -- better motions
-  use 'svermeulen/vim-subversive' -- better substitutes
   use 'voldikss/vim-floaterm' -- have floating terminal
-  use {
-    'abecodes/tabout.nvim', -- make <tab> more useful in insert mode
-    config = function()
-      require('tabout').setup {
-          tabkey = '<Tab>', -- key to trigger tabout, set to an empty string to disable
-          backwards_tabkey = '<S-Tab>', -- key to trigger backwards tabout, set to an empty string to disable
-          act_as_tab = true, -- shift content if tab out is not possible
-          act_as_shift_tab = false, -- reverse shift content if tab out is not possible (if your keyboard/terminal supports <S-Tab>)
-          enable_backwards = true, -- well ...
-          completion = true, -- if the tabkey is used in a completion pum
-          tabouts = {
-            {open = "'", close = "'"},
-            {open = '"', close = '"'},
-            {open = '`', close = '`'},
-            {open = '(', close = ')'},
-            {open = '[', close = ']'},
-            {open = '{', close = '}'}
-          },
-          ignore_beginning = true, --[[ if the cursor is at the beginning of a filled element it will rather tab out than shift the content ]]
-          exclude = {} -- tabout will ignore these filetypes
-      }
-    end,
-    wants = {'nvim-treesitter'}, -- or require if not used so far
-    after = {'nvim-cmp'} -- if a completion plugin is using tabs load it before
-  }
   use 'michaeljsmith/vim-indent-object' -- ai, aI, ii, iI
 
   use{ 'anuvyklack/pretty-fold.nvim', -- pretty folds
@@ -88,27 +70,6 @@ require('packer').startup(function()
         }
         require('pretty-fold.preview').setup_keybinding('h')
      end
-  }
-  use { 
-    'nvim-neorg/neorg',
-    config = function()
-        require('neorg').setup {
-            -- Tell Neorg what modules to load
-            load = {
-                ['core.defaults'] = {}, -- Load all the default modules
-                ['core.norg.concealer'] = {}, -- Allows for use of icons
-                ['core.norg.dirman'] = { config = { workspaces = { notes = '~/notes' }}}, -- Manage your directories with Neorg
-                ['core.norg.completion'] = { config = { engine = 'nvim-cmp' }}, -- enable completion
-                ['core.queries.native'] = {}, -- Required for presenter
-                ['core.ui'] = {}, -- Required for presenter
-                ['core.presenter'] = { config = { zen_mode = 'zen-mode' }}, -- Allows for presenter
-                ['core.norg.qol.toc'] = {}, -- auto generate a table of contents
-                ["core.gtd.base"] = { config = { workspace = 'notes' }}, -- get thigns done
-                ["core.norg.journal"] = { config = { workspace = 'notes', journal_folder = '/journal', strategy = 'flat' }},
-            },
-        }
-    end,
-    requires = 'nvim-lua/plenary.nvim'
   }
 
   -- status line
@@ -145,21 +106,57 @@ require('packer').startup(function()
     run = ':TSUpdate'
   }
   use 'jose-elias-alvarez/null-ls.nvim'
+  use { 'nvim-telescope/telescope-ui-select.nvim' } -- so our code actions look much nicer
 
   -- themes
   use 'jacoborus/tender.vim'
   use 'rebelot/kanagawa.nvim'
 end)
 
+require("options")
+
+require("bufferline").setup({
+  options = {
+    diagnostics = "nvim_lsp",
+    offsets = {{ filetype = "NvimTree", text = "File Explorer", text_align = "left" }},
+  }
+})
 require('neoscroll').setup()
 
-require("options")
+require('dashboardConfig');
+
 require("mappings")
 require("lsp")
 require("theme")
 require("treesitter")
-require("barbar")
 require("null_ls")
 require("floaterm")
 require("lua_line")
 require("flest")
+require("sessionManagerConfig")
+require("telescope").setup {
+  extensions = {
+    ["ui-select"] = {
+      require("telescope.themes").get_dropdown {}
+    }
+  }
+}
+
+-- To get ui-select loaded and working with telescope, you need to call
+-- load_extension, somewhere after setup function:
+require("telescope").load_extension("ui-select")
+
+require("nvim-tree").setup({
+  disable_netrw = true,
+  diagnostics = {
+    enable = true
+  },
+  view = {
+    width = 35
+  }
+})
+
+require('bufdel').setup({
+  next = 'alternate',
+  quit = false,
+})
