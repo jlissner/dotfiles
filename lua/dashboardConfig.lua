@@ -22,6 +22,7 @@ dashboard.section.buttons.val = {
     dashboard.button( "p", "⭐ > Pick Session", ":SessionManager load_session<CR>"),
     dashboard.button( "e", "📜 > New file" , ":ene <BAR> startinsert <CR>"),
     dashboard.button( "r", "🕒 > Recent"   , ":Telescope oldfiles<CR>"),
+    dashboard.button( "c", "🎨 > Color Sheme"   , ":Telescope colorscheme<CR>"),
     dashboard.button( "s", "⚙  > Settings" , ":e $MYVIMRC | :cd %:p:h | split . | wincmd k | pwd<CR>"),
     dashboard.button( "q", "❌ > Quit NVIM", ":qa<CR>"),
 }

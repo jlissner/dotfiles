@@ -55,20 +55,23 @@ require('packer').startup(function()
   use 'voldikss/vim-floaterm' -- have floating terminal
   use 'michaeljsmith/vim-indent-object' -- ai, aI, ii, iI
 
-  use{ 'anuvyklack/pretty-fold.nvim', -- pretty folds
-     config = function()
-        require('pretty-fold').setup{
-          fill_char = '━',
-            sections = {
-              left = {
-                 '━━┫ ', 'content', '┣'
-              },
-              right = {
-                 '┫ ', 'number_of_folded_lines', ': ', 'percentage', ' ┣━━',
-              }
-           }
-        }
-        require('pretty-fold.preview').setup_keybinding('h')
+  use 'anuvyklack/nvim-keymap-amend';
+  use{
+    'anuvyklack/pretty-fold.nvim', -- pretty folds
+    requires = 'anuvyklack/nvim-keymap-amend', -- only for preview
+    config = function()
+      require('pretty-fold').setup{
+        fill_char = '━',
+          sections = {
+            left = {
+               '━━┫ ', 'content', '┣'
+            },
+            right = {
+               '┫ ', 'number_of_folded_lines', ': ', 'percentage', ' ┣━━',
+            }
+         }
+      }
+      require('pretty-fold.preview').setup()
      end
   }
 
@@ -108,9 +111,16 @@ require('packer').startup(function()
   use 'jose-elias-alvarez/null-ls.nvim'
   use { 'nvim-telescope/telescope-ui-select.nvim' } -- so our code actions look much nicer
 
+  -- org mode
+  use 'nvim-orgmode/orgmode'
+
   -- themes
   use 'jacoborus/tender.vim'
   use 'rebelot/kanagawa.nvim'
+  use({
+    "catppuccin/nvim",
+    as = "catppuccin"
+  })
 end)
 
 require("options")
@@ -134,6 +144,7 @@ require("floaterm")
 require("lua_line")
 require("flest")
 require("sessionManagerConfig")
+require("orgmodeConfig");
 require("telescope").setup {
   extensions = {
     ["ui-select"] = {

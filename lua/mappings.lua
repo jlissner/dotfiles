@@ -80,15 +80,17 @@ mapKey("n", "<leader>hu", ":Gitsigns reset_hunk<CR>", mapKeyOpts);
 
 -- folding
 mapKey("n", "zc", "vaIzf", { silent = true });
+mapKey("n", "<Tab>", "za", { silent = true });
 
 -- buffers
-mapKey("n", "<Tab>", "<cmd>BufferLineCycleNext<CR>", mapKeyOpts);
-mapKey("n", "<S-Tab>", "<cmd>BufferLineCyclePrev<CR>", mapKeyOpts);
+mapKey("n", "<leader>bn", "<cmd>BufferLineCycleNext<CR>", mapKeyOpts);
+mapKey("n", "<leader>bN", "<cmd>BufferLineCyclePrev<CR>", mapKeyOpts);
 mapKey("n", "<leader>bb", "<cmd>Telescope buffers<CR>", mapKeyOpts);
-mapKey("n", "<leader>bp", "<cmd>BufferLineTogglePin<CR>", mapKeyOpts);
+mapKey("n", "<leader>bp", "<cmd>BufferLinePick<CR>", mapKeyOpts);
 mapKey("n", "<leader>x", "<cmd>BufDel<CR>", mapKeyOpts);
 mapKey("n", "<leader>X", "<cmd>BufDel!<CR>", mapKeyOpts);
-mapKey("n", "<leader>q", ":q<CR>", mapKeyOpts);
+mapKey("n", "<leader>q", "<cmd>q<CR>", mapKeyOpts);
+mapKey("n", "<leader>bd", "<cmd>%bd | e#<CR>", mapKeyOpts);
 
 -- terminal commands
 mapKey("n", "<leader>t", "<cmd>FloatermToggle<CR>", mapKeyOpts);
@@ -100,5 +102,5 @@ mapKey("t", "<S-Tab>", "<cmd>FloatermPrev<CR>", mapKeyOpts);
 
 -- nvim tree
 mapKey("n", "<leader>nn", "<cmd>:NvimTreeToggle<CR>", mapKeyOpts);
-mapKey("n", "<leader>nf", "<cmd>:NvimTreeFindFile<CR>", mapKeyOpts);
+mapKey("n", "-", "<cmd>:NvimTreeFindFile<CR>", mapKeyOpts);
 mapKey("n", "<leader>nc", "<cmd>:NvimTreeCollapse<CR>", mapKeyOpts);
