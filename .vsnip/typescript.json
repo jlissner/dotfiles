@@ -1,0 +1,14 @@
+{
+  "cl": {
+    "prefix": ["cl"],
+    "body": "console.log(${1:$TM_SELECTED_TEXT});"
+  },
+  "it": {
+    "prefix": ["it"],
+    "body": [
+      "  it('should ${1}', async () => {",
+      "    ${2}",
+      "  })"
+    ]
+  }
+}
