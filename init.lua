@@ -14,6 +14,8 @@ vim.api.nvim_exec([[
   augroup end
 ]], false)
 
+require("options")
+
 local use = require('packer').use
 require('packer').startup(function()
   use {'wbthomason/packer.nvim', opt = true}
@@ -41,19 +43,32 @@ require('packer').startup(function()
   use { 'ojroques/nvim-bufdel' } -- better buffer management
 
   use { -- file explorer
-    'kyazdani42/nvim-tree.lua',
-    requires = {
-      'kyazdani42/nvim-web-devicons', -- optional, for file icon
+  "nvim-neo-tree/neo-tree.nvim",
+    branch = "v2.x",
+    requires = { 
+      "nvim-lua/plenary.nvim",
+      "kyazdani42/nvim-web-devicons", -- not strictly required, but recommended
+      "MunifTanjim/nui.nvim",
     }
   }
+
   -- utils
+  use "lukas-reineke/indent-blankline.nvim" -- view indents better
   use 'tpope/vim-surround' -- crud surrounds
+  use 'tpope/vim-fugitive' -- git stuff
   use 'tpope/vim-repeat' -- make repeat command work more predicably
-  use 'tpope/vim-commentary' -- commenting and uncommenting stuff
+  use { -- commenting and uncommenting stuff
+      'numToStr/Comment.nvim',
+      config = function()
+          require('Comment').setup()
+      end
+  }
   use 'karb94/neoscroll.nvim' -- smooth scrolling
   use 'ggandor/lightspeed.nvim' -- better motions
   use 'voldikss/vim-floaterm' -- have floating terminal
   use 'michaeljsmith/vim-indent-object' -- ai, aI, ii, iI
+  use 'mizlan/iswap.nvim' -- :ISwap to swap swappable things
+  use 'ThePrimeagen/harpoon' -- Go between common files faster
 
   use 'anuvyklack/nvim-keymap-amend';
   use{
@@ -92,10 +107,7 @@ require('packer').startup(function()
   -- language stuff
   use 'sheerun/vim-polyglot'
   use 'neovim/nvim-lspconfig'
-  use {
-    'jose-elias-alvarez/nvim-lsp-ts-utils',
-    requires = { 'neovim/nvim-lspconfig', 'nvim-lua/plenary.nvim' }
-  }
+  use 'jose-elias-alvarez/typescript.nvim'
   use 'williamboman/nvim-lsp-installer'
   use 'hrsh7th/nvim-cmp'
   use 'hrsh7th/cmp-nvim-lsp'
@@ -117,18 +129,22 @@ require('packer').startup(function()
   -- themes
   use 'jacoborus/tender.vim'
   use 'rebelot/kanagawa.nvim'
+  use 'sainnhe/everforest'
+  use 'folke/tokyonight.nvim'
+  use 'morhetz/gruvbox'
+  use 'lifepillar/vim-solarized8'
+  use 'projekt0n/github-nvim-theme'
   use({
     "catppuccin/nvim",
     as = "catppuccin"
   })
 end)
 
-require("options")
 
 require("bufferline").setup({
   options = {
     diagnostics = "nvim_lsp",
-    offsets = {{ filetype = "NvimTree", text = "File Explorer", text_align = "left" }},
+    offsets = {{ filetype = "neo-tree", text = "File Explorer", text_align = "left" }},
   }
 })
 require('neoscroll').setup()
@@ -136,7 +152,8 @@ require('neoscroll').setup()
 require('dashboardConfig');
 
 require("mappings")
-require("lsp")
+require("cmpConfig")
+require("typescriptConfig")
 require("theme")
 require("treesitter")
 require("null_ls")
@@ -157,17 +174,15 @@ require("telescope").setup {
 -- load_extension, somewhere after setup function:
 require("telescope").load_extension("ui-select")
 
-require("nvim-tree").setup({
-  disable_netrw = true,
-  diagnostics = {
-    enable = true
-  },
-  view = {
-    width = 35
-  }
-})
-
 require('bufdel').setup({
   next = 'alternate',
   quit = false,
 })
+
+vim.opt.list = true
+
+require("indent_blankline").setup {
+    show_current_context = true,
+    show_end_of_line = true,
+}
+require('lspConfig/css');

@@ -12,6 +12,6 @@ mapKey('n', '<leader>sd', '<cmd>SessionManager delete_session<CR>', mapKeyOpts);
 vim.api.nvim_create_autocmd({ 'SessionLoadPost' }, {
   group = config_group,
   callback = function()
-    require('nvim-tree').toggle(false, true)
+    vim.cmd('NeoTreeShow')
   end,
 })

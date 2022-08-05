@@ -1,7 +1,6 @@
 vim.o.compatible = false
 vim.o.encoding = "utf-8"
-vim.o.fileformat = "dos"
-vim.o.fileformats = "dos"
+vim.o.fileformats = "unix,dos"
 vim.o.backspace = "indent,eol,start" -- backspace works on every char in insert mode
 vim.o.hidden = true
 vim.o.clipboard = 'unnamedplus' -- use system clipboard by default
@@ -11,6 +10,10 @@ vim.o.scrolloff = 7
 vim.o.sidescrolloff = 0
 vim.o.shell = "cmd"
 vim.o.termguicolors = true
+
+-- conceal
+vim.opt.conceallevel = 2
+vim.opt.concealcursor = 'nc'
 
 -- set ripgrep as grep engine
 vim.o.grepprg="rg --vimgrep --no-heading --smart-case"
@@ -40,7 +43,7 @@ vim.o.splitbelow = true
 
 -- fold level stuff
 vim.o.foldlevel = 12
-vim.o.foldmethod = "manual"
+vim.o.foldmethod = "indent"
 
 -- see whats happening while substituting
 vim.o.inccommand = "nosplit"
