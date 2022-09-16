@@ -14,23 +14,22 @@ end
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
 require("typescript").setup({
-    debug = true,
     server = { -- pass options to lspconfig's setup method
         capabilities = capabilities,
         on_attach = function(client, bufnr)
             local setBufferKeymap = function(mode, lhs, rhs, opts) vim.api.nvim_buf_set_keymap(bufnr, mode, lhs, rhs, opts) end
 
             -- let null-ls take care of formatting 
-            if client.supports_method("textDocument/formatting") then
-                vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
-                vim.api.nvim_create_autocmd("BufWritePre", {
-                    group = augroup,
-                    buffer = bufnr,
-                    callback = function()
-                        lsp_formatting(bufnr)
-                    end,
-                })
-            end
+            -- if client.supports_method("textDocument/formatting") then
+                -- vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+                -- vim.api.nvim_create_autocmd("BufWritePre", {
+                --     group = augroup,
+                --     buffer = bufnr,
+                --     callback = function()
+                --         lsp_formatting(bufnr)
+                --     end,
+                -- })
+            -- end
 
             -- no default maps, so you may want to define some here
             local opts = { silent = true }
@@ -42,9 +41,9 @@ require("typescript").setup({
             setBufferKeymap('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
             setBufferKeymap('n', '<C-.>', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
             setBufferKeymap('n', 'gte', '<cmd>w | Telescope diagnostics<CR>', opts)
-            setBufferKeymap('n', 'gtne', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
-            setBufferKeymap('n', 'gtnE', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
-            setBufferKeymap('n', '<leader>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
+            setBufferKeymap('n', '[e', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
+            setBufferKeymap('n', ']e', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
+            setBufferKeymap('n', '<leader>f', '<cmd>lua vim.lsp.buf.format()<CR>', opts)
             setBufferKeymap('n', '<leader>e', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
 
             -- available from nvim-lsp-ts-utils

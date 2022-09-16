@@ -66,13 +66,23 @@ require('packer').startup(function()
   use 'karb94/neoscroll.nvim' -- smooth scrolling
   use 'ggandor/lightspeed.nvim' -- better motions
   use 'voldikss/vim-floaterm' -- have floating terminal
-  use 'michaeljsmith/vim-indent-object' -- ai, aI, ii, iI
-  use 'mizlan/iswap.nvim' -- :ISwap to swap swappable things
-  use 'ThePrimeagen/harpoon' -- Go between common files faster
 
+  -- see keybindings
+  use {
+    "folke/which-key.nvim",
+    config = function()
+      require("which-key").setup {
+        -- your configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
+      }
+    end
+  }
+
+  -- pretty folds
   use 'anuvyklack/nvim-keymap-amend';
-  use{
-    'anuvyklack/pretty-fold.nvim', -- pretty folds
+  use 'anuvyklack/pretty-fold.nvim' -- pretty folds
+  use { 'anuvyklack/fold-preview.nvim',
     requires = 'anuvyklack/nvim-keymap-amend', -- only for preview
     config = function()
       require('pretty-fold').setup{
@@ -88,7 +98,7 @@ require('packer').startup(function()
       }
       require('pretty-fold.preview').setup()
      end
-  }
+}
 
   -- status line
   use {
