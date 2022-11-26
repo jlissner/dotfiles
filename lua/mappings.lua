@@ -21,11 +21,6 @@ mapKey("i", "<C-j>", "<ESC>:m +1<CR>a", mapKeyOpts)
 
 -- copy/paste
 mapKey("n", "Y", "yg$", mapKeyOpts) -- yank from cursor to end of line
-mapKey("i", "<C-v>", "<ESC>\"*pa", mapKeyOpts)
-
--- duplicate lines
-mapKey("n", "<leader>d", "yyp", mapKeyOpts);
-mapKey("v", "<leader>d", "yPgv", mapKeyOpts);
 
 -- undo/redo
 mapKey("n", "<C-z>", "u", mapKeyOpts)
@@ -44,6 +39,9 @@ mapKey("n", "<C-p>", "<cmd>Telescope git_files<CR>", mapKeyOpts)
 mapKey("n", "<C-f>", "<cmd>Telescope live_grep<CR>", mapKeyOpts)
 mapKey("n", "<leader>r", "<cmd>Telescope oldfiles<CR>", mapKeyOpts)
 
+-- Nicer Search
+mapKey("n", "/", "<cmd>SearchBoxIncSearch<CR>", mapKeyOpts);
+
 -- git signs
 mapKey("n", "<leader>hb", ":Gitsigns blame_line<CR>", mapKeyOpts);
 mapKey("n", "<leader>hp", ":Gitsigns preview_hunk<CR>", mapKeyOpts);
@@ -51,15 +49,6 @@ mapKey("n", "<leader>hd", ":Gitsigns diffthis<CR>", mapKeyOpts);
 mapKey("n", "<leader>hu", ":Gitsigns reset_hunk<CR>", mapKeyOpts);
 mapKey("n", "[h", ":Gitsigns next_hunk<CR>", mapKeyOpts);
 mapKey("n", "]h", ":Gitsigns prev_hunk<CR>", mapKeyOpts);
-
--- terminal commands
-mapKey("n", "<leader>t", "<cmd>FloatermToggle<CR>", mapKeyOpts);
-mapKey("t", "<leader>t", "<cmd>FloatermToggle<CR>", mapKeyOpts);
-mapKey("t", "<ESC>", "<cmd>FloatermToggle<CR>", mapKeyOpts);
-mapKey("t", "<C-S-w>", "<cmd>FloatermKill<CR>", mapKeyOpts);
-mapKey("t", "<C-T>", "<cmd>FloatermNew<CR>", mapKeyOpts);
-mapKey("t", "<Tab>", "<cmd>FloatermNext<CR>", mapKeyOpts);
-mapKey("t", "<S-Tab>", "<cmd>FloatermPrev<CR>", mapKeyOpts);
 
 -- buffers & file nav
 mapKey("n", "<Tab>", "<cmd>BufferLineCycleNext<CR>", mapKeyOpts);

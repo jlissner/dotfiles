@@ -52,21 +52,28 @@ require('packer').startup(function()
     }
   }
 
-  -- use({ -- nice commandline/search/notifications/etc
-  --   "folke/noice.nvim",
-  --   event = "VimEnter",
-  --   config = function()
-  --     require("noice").setup()
-  --   end,
-  --   requires = {
-  --     -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
-  --     "MunifTanjim/nui.nvim",
-  --     -- OPTIONAL:
-  --     --   `nvim-notify` is only needed, if you want to use the notification view.
-  --     --   If not available, we use `mini` as the fallback
-  --     "rcarriga/nvim-notify",
-  --     }
-  -- })
+  use { -- searchbox
+    'VonHeikemen/searchbox.nvim',
+    requires = {
+      {'MunifTanjim/nui.nvim'}
+    }
+  }
+
+  use({ -- nice commandline/search/notifications/etc
+    "folke/noice.nvim",
+    event = "VimEnter",
+    config = function()
+      require("noice").setup()
+    end,
+    requires = {
+      -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+      "MunifTanjim/nui.nvim",
+      -- OPTIONAL:
+      --   `nvim-notify` is only needed, if you want to use the notification view.
+      --   If not available, we use `mini` as the fallback
+      "rcarriga/nvim-notify",
+      }
+  })
 
   -- utils
   use "lukas-reineke/indent-blankline.nvim" -- view indents better
@@ -81,7 +88,6 @@ require('packer').startup(function()
   }
   use 'karb94/neoscroll.nvim' -- smooth scrolling
   use 'ggandor/lightspeed.nvim' -- better motions
-  use 'voldikss/vim-floaterm' -- have floating terminal
 
   -- see keybindings
   use {
@@ -94,30 +100,6 @@ require('packer').startup(function()
       }
     end
   }
-
-  -- pretty folds
-  use 'anuvyklack/nvim-keymap-amend';
-  use { 'anuvyklack/pretty-fold.nvim', -- pretty folds
-    config = function()
-      require('pretty-fold').setup{
-        fill_char = '━',
-          sections = {
-            left = {
-               '━━┫ ', 'content', '┣'
-            },
-            right = {
-               '┫ ', 'number_of_folded_lines', ': ', 'percentage', ' ┣━━',
-            }
-         }
-      }
-    end
-  }
-  use { 'anuvyklack/fold-preview.nvim',
-    requires = 'anuvyklack/nvim-keymap-amend', -- only for preview
-    config = function()
-      require('pretty-fold.preview').setup()
-     end
-}
 
   -- status line
   use {
@@ -165,7 +147,6 @@ require('packer').startup(function()
   use 'nvim-orgmode/orgmode'
 
   -- themes
-  use 'jacoborus/tender.vim'
   use 'rebelot/kanagawa.nvim'
   use 'sainnhe/everforest'
   use 'folke/tokyonight.nvim'
@@ -194,9 +175,7 @@ require("cmpConfig")
 require("theme")
 require("treesitter")
 require("null_ls")
-require("floaterm")
 require("lua_line")
-require("flest")
 require("sessionManagerConfig")
 require("orgmodeConfig");
 require("telescope").setup {
