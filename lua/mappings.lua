@@ -10,23 +10,22 @@ mapKey("v", "<C-/>", "gbgv", { silent = true })
 mapKey("i", "<C-/>", "<ESC>mtgc`ta", { silent = true })
 
 -- move lines up/down
-mapKey("n", "<C-S-k>", ":m -2<CR>", mapKeyOpts)
-mapKey("n", "<C-S-j>", ":m +1<CR>", mapKeyOpts)
+mapKey("n", "<C-k>", ":m -2<CR>", mapKeyOpts)
+mapKey("n", "<C-j>", ":m +1<CR>", mapKeyOpts)
 
-mapKey("v", "<C-S-k>", ":m '<-2<CR>gv=gv", mapKeyOpts)
-mapKey("v", "<C-S-j>", ":m '>+1<CR>gv=gv", mapKeyOpts)
+mapKey("v", "<C-k>", ":m '<-2<CR>gv=gv", mapKeyOpts)
+mapKey("v", "<C-j>", ":m '>+1<CR>gv=gv", mapKeyOpts)
 
-mapKey("i", "<C-S-k>", "<ESC>:m -2<CR>a", mapKeyOpts)
-mapKey("i", "<C-S-Down>", "<ESC>:m +1<CR>a", mapKeyOpts)
+mapKey("i", "<C-k>", "<ESC>:m -2<CR>a", mapKeyOpts)
+mapKey("i", "<C-j>", "<ESC>:m +1<CR>a", mapKeyOpts)
 
 -- copy/paste
 mapKey("n", "Y", "yg$", mapKeyOpts) -- yank from cursor to end of line
-mapKey("v", "p", '"_dP', mapKeyOpts) -- dont yant text after pasting in visual mode
 mapKey("i", "<C-v>", "<ESC>\"*pa", mapKeyOpts)
 
--- dubplicate lines
-mapKey("n", "<C-S-d>", "yyp", mapKeyOpts);
-mapKey("v", "<C-S-d>", "yPgv", mapKeyOpts);
+-- duplicate lines
+mapKey("n", "<leader>d", "yyp", mapKeyOpts);
+mapKey("v", "<leader>d", "yPgv", mapKeyOpts);
 
 -- undo/redo
 mapKey("n", "<C-z>", "u", mapKeyOpts)
@@ -42,8 +41,7 @@ mapKey("v", "<", "<gv", mapKeyOpts)
 
 -- Find files using Telescope command-line sugar.
 mapKey("n", "<C-p>", "<cmd>Telescope git_files<CR>", mapKeyOpts)
-mapKey("n", "<C-f>", "/", mapKeyOpts)
-mapKey("n", "<C-S-f>", "<cmd>Telescope live_grep<CR>", mapKeyOpts)
+mapKey("n", "<C-f>", "<cmd>Telescope live_grep<CR>", mapKeyOpts)
 mapKey("n", "<leader>r", "<cmd>Telescope oldfiles<CR>", mapKeyOpts)
 
 -- git signs
@@ -64,12 +62,11 @@ mapKey("t", "<Tab>", "<cmd>FloatermNext<CR>", mapKeyOpts);
 mapKey("t", "<S-Tab>", "<cmd>FloatermPrev<CR>", mapKeyOpts);
 
 -- buffers & file nav
-mapKey("n", "gn", "<cmd>BufferLineCycleNext<CR>", mapKeyOpts);
-mapKey("n", "gN", "<cmd>BufferLineCyclePrev<CR>", mapKeyOpts);
-mapKey("n", "<leader>bp", "<cmd>BufferLinePick<CR>", mapKeyOpts);
+mapKey("n", "<Tab>", "<cmd>BufferLineCycleNext<CR>", mapKeyOpts);
+mapKey("n", "<S-Tab>", "<cmd>BufferLineCyclePrev<CR>", mapKeyOpts);
+mapKey("n", "<leader>b", "<cmd>BufferLinePick<CR>", mapKeyOpts);
 mapKey("n", "<leader>x", "<cmd>BufDel<CR>", mapKeyOpts);
 mapKey("n", "<leader>q", "<cmd>q<CR>", mapKeyOpts);
-mapKey("n", "<leader>bb", "<cmd>Telescope buffers<CR>", mapKeyOpts);
 
 -- nvim tree
 mapKey("n", "-", "<cmd>:NeoTreeFloat<CR>", mapKeyOpts);

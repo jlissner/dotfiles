@@ -52,6 +52,22 @@ require('packer').startup(function()
     }
   }
 
+  -- use({ -- nice commandline/search/notifications/etc
+  --   "folke/noice.nvim",
+  --   event = "VimEnter",
+  --   config = function()
+  --     require("noice").setup()
+  --   end,
+  --   requires = {
+  --     -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+  --     "MunifTanjim/nui.nvim",
+  --     -- OPTIONAL:
+  --     --   `nvim-notify` is only needed, if you want to use the notification view.
+  --     --   If not available, we use `mini` as the fallback
+  --     "rcarriga/nvim-notify",
+  --     }
+  -- })
+
   -- utils
   use "lukas-reineke/indent-blankline.nvim" -- view indents better
   use 'tpope/vim-surround' -- crud surrounds
@@ -81,9 +97,7 @@ require('packer').startup(function()
 
   -- pretty folds
   use 'anuvyklack/nvim-keymap-amend';
-  use 'anuvyklack/pretty-fold.nvim' -- pretty folds
-  use { 'anuvyklack/fold-preview.nvim',
-    requires = 'anuvyklack/nvim-keymap-amend', -- only for preview
+  use { 'anuvyklack/pretty-fold.nvim', -- pretty folds
     config = function()
       require('pretty-fold').setup{
         fill_char = '━',
@@ -96,6 +110,11 @@ require('packer').startup(function()
             }
          }
       }
+    end
+  }
+  use { 'anuvyklack/fold-preview.nvim',
+    requires = 'anuvyklack/nvim-keymap-amend', -- only for preview
+    config = function()
       require('pretty-fold.preview').setup()
      end
 }
@@ -133,6 +152,15 @@ require('packer').startup(function()
   use 'jose-elias-alvarez/null-ls.nvim'
   use { 'nvim-telescope/telescope-ui-select.nvim' } -- so our code actions look much nicer
 
+  -- code coverage
+  use {
+    'andythigpen/nvim-coverage',
+    requires = { 'nvim-lua/plenary.nvim' },
+    config = function()
+      require("coverage").setup();
+    end,
+  }
+
   -- org mode
   use 'nvim-orgmode/orgmode'
 
@@ -163,7 +191,6 @@ require('dashboardConfig');
 
 require("mappings")
 require("cmpConfig")
-require("typescriptConfig")
 require("theme")
 require("treesitter")
 require("null_ls")
@@ -196,3 +223,4 @@ require("indent_blankline").setup {
     show_end_of_line = true,
 }
 require('lspConfig/css');
+require('lspConfig/typescript');

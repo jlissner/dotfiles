@@ -12,7 +12,7 @@ require('lualine').setup({
     lualine_b = {{'filename', path = 1 }},
     lualine_c = {'branch', 'diff'},
     lualine_x = {},
-    lualine_y = {},
+    lualine_y = {'location'},
     lualine_z = { window },
   },
   inactive_sections = {

@@ -127,7 +127,7 @@ _G.packer_plugins = {
     url = "https://github.com/sainnhe/everforest"
   },
   ["fold-preview.nvim"] = {
-    config = { "\27LJ\2\n1\0\0\5\0\v\0\0186\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\5\0005\4\4\0=\4\6\0035\4\a\0=\4\b\3=\3\t\2B\0\2\0016\0\0\0'\2\n\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\24pretty-fold.preview\rsections\nright\1\6\0\0\t笏ｫ \27number_of_folded_lines\a: \15percentage\15 笏｣笏≫煤\tleft\1\0\0\1\4\0\0\15笏≫煤笏ｫ \fcontent\b笏｣\1\0\1\14fill_char\b笏―nsetup\16pretty-fold\frequire\0" },
+    config = { "\27LJ\2\nA\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\24pretty-fold.preview\frequire\0" },
     loaded = true,
     path = "C:\\Users\\joe.lissner\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\fold-preview.nvim",
     url = "https://github.com/anuvyklack/fold-preview.nvim"
@@ -203,6 +203,12 @@ _G.packer_plugins = {
     path = "C:\\Users\\joe.lissner\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
   },
+  ["nvim-coverage"] = {
+    config = { "\27LJ\2\n6\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\rcoverage\frequire\0" },
+    loaded = true,
+    path = "C:\\Users\\joe.lissner\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-coverage",
+    url = "https://github.com/andythigpen/nvim-coverage"
+  },
   ["nvim-keymap-amend"] = {
     loaded = true,
     path = "C:\\Users\\joe.lissner\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-keymap-amend",
@@ -245,6 +251,7 @@ _G.packer_plugins = {
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
   ["pretty-fold.nvim"] = {
+    config = { "\27LJ\2\nﾑ\1\0\0\5\0\n\0\r6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\5\0005\4\4\0=\4\6\0035\4\a\0=\4\b\3=\3\t\2B\0\2\1K\0\1\0\rsections\nright\1\6\0\0\t笏ｫ \27number_of_folded_lines\a: \15percentage\15 笏｣笏≫煤\tleft\1\0\0\1\4\0\0\15笏≫煤笏ｫ \fcontent\b笏｣\1\0\1\14fill_char\b笏―nsetup\16pretty-fold\frequire\0" },
     loaded = true,
     path = "C:\\Users\\joe.lissner\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\pretty-fold.nvim",
     url = "https://github.com/anuvyklack/pretty-fold.nvim"
@@ -322,22 +329,30 @@ time([[Defining packer_plugins]], false)
 time([[Config for which-key.nvim]], true)
 try_loadstring("\27LJ\2\n;\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\14which-key\frequire\0", "config", "which-key.nvim")
 time([[Config for which-key.nvim]], false)
+-- Config for: pretty-fold.nvim
+time([[Config for pretty-fold.nvim]], true)
+try_loadstring("\27LJ\2\nﾑ\1\0\0\5\0\n\0\r6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\5\0005\4\4\0=\4\6\0035\4\a\0=\4\b\3=\3\t\2B\0\2\1K\0\1\0\rsections\nright\1\6\0\0\t笏ｫ \27number_of_folded_lines\a: \15percentage\15 笏｣笏≫煤\tleft\1\0\0\1\4\0\0\15笏≫煤笏ｫ \fcontent\b笏｣\1\0\1\14fill_char\b笏―nsetup\16pretty-fold\frequire\0", "config", "pretty-fold.nvim")
+time([[Config for pretty-fold.nvim]], false)
 -- Config for: gitsigns.nvim
 time([[Config for gitsigns.nvim]], true)
 try_loadstring("\27LJ\2\n6\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\rgitsigns\frequire\0", "config", "gitsigns.nvim")
 time([[Config for gitsigns.nvim]], false)
 -- Config for: fold-preview.nvim
 time([[Config for fold-preview.nvim]], true)
-try_loadstring("\27LJ\2\n1\0\0\5\0\v\0\0186\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\5\0005\4\4\0=\4\6\0035\4\a\0=\4\b\3=\3\t\2B\0\2\0016\0\0\0'\2\n\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\24pretty-fold.preview\rsections\nright\1\6\0\0\t笏ｫ \27number_of_folded_lines\a: \15percentage\15 笏｣笏≫煤\tleft\1\0\0\1\4\0\0\15笏≫煤笏ｫ \fcontent\b笏｣\1\0\1\14fill_char\b笏―nsetup\16pretty-fold\frequire\0", "config", "fold-preview.nvim")
+try_loadstring("\27LJ\2\nA\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\24pretty-fold.preview\frequire\0", "config", "fold-preview.nvim")
 time([[Config for fold-preview.nvim]], false)
--- Config for: Comment.nvim
-time([[Config for Comment.nvim]], true)
-try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fComment\frequire\0", "config", "Comment.nvim")
-time([[Config for Comment.nvim]], false)
 -- Config for: alpha-nvim
 time([[Config for alpha-nvim]], true)
 try_loadstring("\27LJ\2\na\0\0\5\0\5\0\n6\0\0\0'\2\1\0B\0\2\0029\0\2\0006\2\0\0'\4\3\0B\2\2\0029\2\4\2B\0\2\1K\0\1\0\vconfig\27alpha.themes.dashboard\nsetup\nalpha\frequire\0", "config", "alpha-nvim")
 time([[Config for alpha-nvim]], false)
+-- Config for: Comment.nvim
+time([[Config for Comment.nvim]], true)
+try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fComment\frequire\0", "config", "Comment.nvim")
+time([[Config for Comment.nvim]], false)
+-- Config for: nvim-coverage
+time([[Config for nvim-coverage]], true)
+try_loadstring("\27LJ\2\n6\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\rcoverage\frequire\0", "config", "nvim-coverage")
+time([[Config for nvim-coverage]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

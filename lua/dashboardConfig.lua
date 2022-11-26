@@ -24,10 +24,10 @@ dashboard.section.header.val = {
 dashboard.section.buttons.val = {
     dashboard.button("o", "🚀  >  Open Last Session", ":SessionManager load_last_session<CR>"),
     dashboard.button("p", "⭐  >  Pick Session", ":SessionManager load_session<CR>"),
-    dashboard.button("n", "📜  >  New file" , ":ene <BAR> startinsert <CR>"),
-    dashboard.button("r", "🕒  >  Recent"   , ":Telescope oldfiles<CR>"),
-    dashboard.button("c", "🎨  >  Color Sheme"   , ":Telescope colorscheme<CR>"),
-    dashboard.button("s", "⚙   >  Settings" , ":e $MYVIMRC | :cd %:p:h | split . | wincmd k | pwd<CR>"),
+    dashboard.button("n", "📜  >  New file", ":ene <BAR> startinsert <CR>"),
+    dashboard.button("r", "🕒  >  Recent", ":Telescope oldfiles<CR>"),
+    dashboard.button("c", "🎨  >  Color Sheme", ":Telescope colorscheme<CR>"),
+    dashboard.button("s", "🛠  >  Settings", ":e $MYVIMRC | :cd %:p:h | wincmd k | pwd<CR>"),
     dashboard.button("q", "❌  >  Quit NVIM", ":qa<CR>"),
 }
 

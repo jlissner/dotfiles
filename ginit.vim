@@ -5,9 +5,9 @@ if exists(':GuiFont')
 endif
 
 " Enable Ligatures
-if exists(':GuiRenderLigatures')
-    GuiRenderLigatures 1
-endif
+" if exists(':GuiRenderLigatures')
+"    GuiRenderLigatures 1
+" endif
 
 " Disable GUI Tabline
 if exists(':GuiTabline')
