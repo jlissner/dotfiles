@@ -52,28 +52,30 @@ require('packer').startup(function()
     }
   }
 
-  use { -- searchbox
-    'VonHeikemen/searchbox.nvim',
-    requires = {
-      {'MunifTanjim/nui.nvim'}
-    }
-  }
+  -- fun, but not needed, gonna hold off for the moment
+  -- use { -- searchbox
+  --   'VonHeikemen/searchbox.nvim',
+  --   requires = {
+  --     {'MunifTanjim/nui.nvim'}
+  --   }
+  -- }
 
-  use({ -- nice commandline/search/notifications/etc
-    "folke/noice.nvim",
-    event = "VimEnter",
-    config = function()
-      require("noice").setup()
-    end,
-    requires = {
-      -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
-      "MunifTanjim/nui.nvim",
-      -- OPTIONAL:
-      --   `nvim-notify` is only needed, if you want to use the notification view.
-      --   If not available, we use `mini` as the fallback
-      "rcarriga/nvim-notify",
-      }
-  })
+  -- too slow, try again later
+  -- use({ -- nice commandline/search/notifications/etc
+  --   "folke/noice.nvim",
+  --   event = "VimEnter",
+  --   config = function()
+  --     require("noice").setup()
+  --   end,
+  --   requires = {
+  --     -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+  --     "MunifTanjim/nui.nvim",
+  --     -- OPTIONAL:
+  --     --   `nvim-notify` is only needed, if you want to use the notification view.
+  --     --   If not available, we use `mini` as the fallback
+  --     "rcarriga/nvim-notify",
+  --     }
+  -- })
 
   -- utils
   use "lukas-reineke/indent-blankline.nvim" -- view indents better

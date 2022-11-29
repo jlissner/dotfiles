@@ -45,7 +45,7 @@ require("lspconfig")['tsserver'].setup({
         setBufferKeymap('n', 'gte', '<cmd>w | Telescope diagnostics<CR>', opts)
         setBufferKeymap('n', '[e', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
         setBufferKeymap('n', ']e', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
-        setBufferKeymap('n', '<leader>f', '<cmd>lua vim.lsp.buf.format()<CR>', opts)
+        setBufferKeymap('n', '<leader>f', '<cmd>lua vim.lsp.buf.format({ timeout_ms = 2000 })<CR>', opts)
         setBufferKeymap('n', '<leader>e', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
 
         -- available from nvim-lsp-ts-utils

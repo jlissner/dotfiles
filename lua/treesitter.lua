@@ -1,5 +1,16 @@
 require('nvim-treesitter.configs').setup {
-  ensure_installed = { "javascript", "markdown", "tsx", "scss", "org" },
+  ensure_installed = {
+    "javascript",
+    "markdown",
+    "tsx",
+    "scss",
+    "org",
+    "lua",
+    "vim",
+    "bash",
+    "markdown_inline",
+    "regex"
+  },
   highlight = {
     enable = true,
     additional_vim_regex_highlighting = { "org" } -- Required for spellcheck, some LaTex highlights and code block highlights that do not have ts grammar,
