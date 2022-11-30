@@ -40,7 +40,7 @@ mapKey("n", "<C-f>", "<cmd>Telescope live_grep<CR>", mapKeyOpts)
 mapKey("n", "<leader>r", "<cmd>Telescope oldfiles<CR>", mapKeyOpts)
 
 -- Nicer Search
-mapKey("n", "/", "<cmd>SearchBoxIncSearch<CR>", mapKeyOpts);
+-- mapKey("n", "/", "<cmd>SearchBoxIncSearch<CR>", mapKeyOpts);
 
 -- git signs
 mapKey("n", "<leader>hb", ":Gitsigns blame_line<CR>", mapKeyOpts);
@@ -59,4 +59,4 @@ mapKey("n", "<leader>q", "<cmd>q<CR>", mapKeyOpts);
 
 -- nvim tree
 mapKey("n", "-", "<cmd>:NeoTreeFloat<CR>", mapKeyOpts);
-mapKey("n", "<leader>nn", "<cmd>:NeoTreeShow<CR>", mapKeyOpts);
+mapKey("n", "<leader>nn", "<cmd>:NeoTreeFocusToggle<CR>", mapKeyOpts);
