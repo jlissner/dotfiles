@@ -80,7 +80,6 @@ require('packer').startup(function()
   -- utils
   use "lukas-reineke/indent-blankline.nvim" -- view indents better
   use 'tpope/vim-surround' -- crud surrounds
-  use 'tpope/vim-fugitive' -- git stuff
   use 'tpope/vim-repeat' -- make repeat command work more predicably
   use { -- commenting and uncommenting stuff
       'numToStr/Comment.nvim',
@@ -90,6 +89,13 @@ require('packer').startup(function()
   }
   use 'karb94/neoscroll.nvim' -- smooth scrolling
   use 'ggandor/lightspeed.nvim' -- better motions
+  use({
+    'Wansmer/treesj', -- split/join things better
+    requires = { 'nvim-treesitter' },
+    config = function()
+      require('treesj').setup()
+    end,
+  })
 
   -- see keybindings
   use {
@@ -109,13 +115,14 @@ require('packer').startup(function()
     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   }
 
-
   -- git stuff
   use {
     'lewis6991/gitsigns.nvim',
     requires = { 'nvim-lua/plenary.nvim' },
     config = function() require('gitsigns').setup() end
   }
+  use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
+  use 'tpope/vim-fugitive'
 
   -- language stuff
   use 'sheerun/vim-polyglot'
@@ -135,16 +142,7 @@ require('packer').startup(function()
   }
   use 'jose-elias-alvarez/null-ls.nvim'
   use { 'nvim-telescope/telescope-ui-select.nvim' } -- so our code actions look much nicer
-
-  -- code coverage
-  use {
-    'andythigpen/nvim-coverage',
-    requires = { 'nvim-lua/plenary.nvim' },
-    config = function()
-      require("coverage").setup();
-    end,
-  }
-
+ 
   -- org mode
   use 'nvim-orgmode/orgmode'
 

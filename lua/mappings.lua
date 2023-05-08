@@ -37,6 +37,7 @@ mapKey("v", "<", "<gv", mapKeyOpts)
 -- Find files using Telescope command-line sugar.
 mapKey("n", "<C-p>", "<cmd>Telescope git_files<CR>", mapKeyOpts)
 mapKey("n", "<C-f>", "<cmd>Telescope live_grep<CR>", mapKeyOpts)
+mapKey("n", "<C-S-f>", "<cmd>Telescope live_grep<CR>", mapKeyOpts)
 mapKey("n", "<leader>r", "<cmd>Telescope oldfiles<CR>", mapKeyOpts)
 
 -- Nicer Search
