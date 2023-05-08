@@ -159,7 +159,6 @@ require('packer').startup(function()
   })
 end)
 
-
 require("bufferline").setup({
   options = {
     diagnostics = "nvim_lsp",
