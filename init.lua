@@ -142,6 +142,7 @@ require('packer').startup(function()
   }
   use 'jose-elias-alvarez/null-ls.nvim'
   use { 'nvim-telescope/telescope-ui-select.nvim' } -- so our code actions look much nicer
+  use 'tsandall/vim-rego'
  
   -- org mode
   use 'nvim-orgmode/orgmode'

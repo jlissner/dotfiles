@@ -49,8 +49,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "C:\\Users\\jlissne\\AppData\\Local\\Temp\\nvim\\packer_hererocks\\2.1.0-beta3\\share\\lua\\5.1\\?.lua;C:\\Users\\jlissne\\AppData\\Local\\Temp\\nvim\\packer_hererocks\\2.1.0-beta3\\share\\lua\\5.1\\?\\init.lua;C:\\Users\\jlissne\\AppData\\Local\\Temp\\nvim\\packer_hererocks\\2.1.0-beta3\\lib\\luarocks\\rocks-5.1\\?.lua;C:\\Users\\jlissne\\AppData\\Local\\Temp\\nvim\\packer_hererocks\\2.1.0-beta3\\lib\\luarocks\\rocks-5.1\\?\\init.lua"
-local install_cpath_pattern = "C:\\Users\\jlissne\\AppData\\Local\\Temp\\nvim\\packer_hererocks\\2.1.0-beta3\\lib\\lua\\5.1\\?.so"
+local package_path_str = "C:\\Users\\jlissne\\AppData\\Local\\Temp\\nvim\\packer_hererocks\\2.1.1707061634\\share\\lua\\5.1\\?.lua;C:\\Users\\jlissne\\AppData\\Local\\Temp\\nvim\\packer_hererocks\\2.1.1707061634\\share\\lua\\5.1\\?\\init.lua;C:\\Users\\jlissne\\AppData\\Local\\Temp\\nvim\\packer_hererocks\\2.1.1707061634\\lib\\luarocks\\rocks-5.1\\?.lua;C:\\Users\\jlissne\\AppData\\Local\\Temp\\nvim\\packer_hererocks\\2.1.1707061634\\lib\\luarocks\\rocks-5.1\\?\\init.lua"
+local install_cpath_pattern = "C:\\Users\\jlissne\\AppData\\Local\\Temp\\nvim\\packer_hererocks\\2.1.1707061634\\lib\\lua\\5.1\\?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -274,6 +274,11 @@ _G.packer_plugins = {
     path = "C:\\Users\\jlissne\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-polyglot",
     url = "https://github.com/sheerun/vim-polyglot"
   },
+  ["vim-rego"] = {
+    loaded = true,
+    path = "C:\\Users\\jlissne\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-rego",
+    url = "https://github.com/tsandall/vim-rego"
+  },
   ["vim-repeat"] = {
     loaded = true,
     path = "C:\\Users\\jlissne\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-repeat",
@@ -307,6 +312,10 @@ time([[Defining packer_plugins]], false)
 time([[Config for alpha-nvim]], true)
 try_loadstring("\27LJ\2\na\0\0\5\0\5\0\n6\0\0\0'\2\1\0B\0\2\0029\0\2\0006\2\0\0'\4\3\0B\2\2\0029\2\4\2B\0\2\1K\0\1\0\vconfig\27alpha.themes.dashboard\nsetup\nalpha\frequire\0", "config", "alpha-nvim")
 time([[Config for alpha-nvim]], false)
+-- Config for: which-key.nvim
+time([[Config for which-key.nvim]], true)
+try_loadstring("\27LJ\2\n;\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\14which-key\frequire\0", "config", "which-key.nvim")
+time([[Config for which-key.nvim]], false)
 -- Config for: gitsigns.nvim
 time([[Config for gitsigns.nvim]], true)
 try_loadstring("\27LJ\2\n6\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\rgitsigns\frequire\0", "config", "gitsigns.nvim")
@@ -319,10 +328,6 @@ time([[Config for Comment.nvim]], false)
 time([[Config for treesj]], true)
 try_loadstring("\27LJ\2\n4\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\vtreesj\frequire\0", "config", "treesj")
 time([[Config for treesj]], false)
--- Config for: which-key.nvim
-time([[Config for which-key.nvim]], true)
-try_loadstring("\27LJ\2\n;\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\14which-key\frequire\0", "config", "which-key.nvim")
-time([[Config for which-key.nvim]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

@@ -9,7 +9,8 @@ require('nvim-treesitter.configs').setup {
     "vim",
     "bash",
     "markdown_inline",
-    "regex"
+    "regex",
+    "sql",
   },
   highlight = {
     enable = true,
