@@ -51,31 +51,27 @@ require('packer').startup(function()
       "MunifTanjim/nui.nvim",
     }
   }
-
-  -- fun, but not needed, gonna hold off for the moment
-  -- use { -- searchbox
-  --   'VonHeikemen/searchbox.nvim',
-  --   requires = {
-  --     {'MunifTanjim/nui.nvim'}
-  --   }
-  -- }
-
-  -- too slow, try again later
-  -- use({ -- nice commandline/search/notifications/etc
-  --   "folke/noice.nvim",
-  --   event = "VimEnter",
-  --   config = function()
-  --     require("noice").setup()
-  --   end,
-  --   requires = {
-  --     -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
-  --     "MunifTanjim/nui.nvim",
-  --     -- OPTIONAL:
-  --     --   `nvim-notify` is only needed, if you want to use the notification view.
-  --     --   If not available, we use `mini` as the fallback
-  --     "rcarriga/nvim-notify",
-  --     }
-  -- })
+  use { -- Github Copilot
+    "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
+    event = "InsertEnter",
+    config = function()
+      require("copilot").setup({
+          suggestion = {
+            auto_trigger = true,
+          },
+      });
+    end,
+  }
+  use {
+    "CopilotC-Nvim/CopilotChat.nvim",
+    config = function()
+      require("CopilotChat").setup {
+        debug = true, -- Enable debugging
+        -- See Configuration section for rest
+      }
+    end,
+  }
 
   -- utils
   use "lukas-reineke/indent-blankline.nvim" -- view indents better
@@ -197,9 +193,6 @@ require('bufdel').setup({
 
 vim.opt.list = true
 
-require("indent_blankline").setup {
-    show_current_context = true,
-    show_end_of_line = true,
-}
+require("ibl").setup();
 require('lspConfig/css');
 require('lspConfig/typescript');
