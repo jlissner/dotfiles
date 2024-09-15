@@ -1,4 +1,3 @@
-require('orgmode').setup_ts_grammar();
 require('orgmode').setup({
   org_agenda_files = {'~/notes/*', '~/notes/**/*'},
   org_default_notes_file = '~/notes/notes.org',
@@ -16,9 +15,35 @@ require('orgmode').setup({
     NOTE = ':foreground blue',
   },
   org_capture_templates = {
+    s = {
+      description = 'Standup',
+      template = '* Connection Standup :%(return string.upper(os.date("%b%Y"))):\n'..
+                 '%U\n\n'..
+                 '** Attendees\n'..
+                 '- Joe Lissner\n'..
+                 '- Josh Heath\n'..
+                 '- David Quinonez\n'..
+                 '- Karen Gomez\n'..
+                 '- Fred Luetkemeier\n\n'..
+                 '** Updates\n'..
+                 '*** Joe\n\n'..
+                 '*** Josh\n\n'..
+                 '*** David\n\n'..
+                 '*** Karen\n\n'..
+                 '*** Fred\n\n'..
+                 '** Word of the Day :WORD_OF_THE_DAY:SPANISH:\n'..
+                 '*** ??: \n\n'..
+                 '** Action Items\n'..
+                 '*** TODO\n',
+      target = '~/notes/journal/%<%Y-%m-%d>.org',
+      properties = {
+        empty_lines = {
+        }
+      },
+    },
     m = {
       description = 'Meeting',
-      template = '* %? :MEETING:%(return string.upper(os.date("%b%Y"))):\n'..
+      template = '* %? :%(return string.upper(os.date("%b%Y"))):\n'..
                  '%U\n\n'..
                  '** Attendees\n\n'..
                  '** Agenda\n\n'..

@@ -59,5 +59,4 @@ mapKey("n", "<leader>x", "<cmd>BufDel<CR>", mapKeyOpts);
 mapKey("n", "<leader>q", "<cmd>q<CR>", mapKeyOpts);
 
 -- nvim tree
-mapKey("n", "-", "<cmd>:NeoTreeFloat<CR>", mapKeyOpts);
 mapKey("n", "<leader>nn", "<cmd>:NeoTreeFocusToggle<CR>", mapKeyOpts);
