@@ -13,7 +13,7 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 -- local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
-require("lspconfig")['tsserver'].setup({
+require("lspconfig")['ts_ls'].setup({
     capabilities = capabilities,
     on_attach = function(client, bufnr)
         local setBufferKeymap = function(mode, lhs, rhs, opts)

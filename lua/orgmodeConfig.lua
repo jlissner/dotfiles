@@ -17,17 +17,17 @@ require('orgmode').setup({
   org_capture_templates = {
     s = {
       description = 'Standup',
-      template = '* Connection Standup :%(return string.upper(os.date("%b%Y"))):\n'..
+      template = '* Connection Standup :%(return string.upper(os.date("%b%Y"))):CONNECTIONS:\n'..
                  '%U\n\n'..
                  '** Attendees\n'..
                  '- Joe Lissner\n'..
-                 '- Josh Heath\n'..
+                 '- Seth Johnson\n'..
                  '- David Quinonez\n'..
                  '- Karen Gomez\n'..
                  '- Fred Luetkemeier\n\n'..
                  '** Updates\n'..
                  '*** Joe\n\n'..
-                 '*** Josh\n\n'..
+                 '*** Seth\n\n'..
                  '*** David\n\n'..
                  '*** Karen\n\n'..
                  '*** Fred\n\n'..
